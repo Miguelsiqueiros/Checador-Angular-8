@@ -7,12 +7,12 @@ import { CheckInComponent } from './components/checkIn/checkIn.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CheckInComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    CheckInComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
