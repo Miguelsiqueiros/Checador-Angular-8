@@ -1,1 +1,38 @@
-<p>navbar works!</p>
+<!-- <mat-tab-group [backgroundColor]="'warn'">
+    <mat-tab label="One">
+        <h1>Some tab content</h1>
+        <p>...</p>
+    </mat-tab>
+    <mat-tab label="Two">
+        <h1>Some more tab content</h1>
+        <p>...</p>
+    </mat-tab>
+</mat-tab-group> -->
+
+<mat-tab-group [backgroundColor]="'primary'">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>check_circle_outline</mat-icon>
+        </ng-template>
+        <app-check-in></app-check-in>
+        <app-ranking></app-ranking>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>report_problem</mat-icon>
+        </ng-template>
+        <app-pto></app-pto>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>assignment</mat-icon>
+        </ng-template>
+
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>assignment_ind</mat-icon>
+        </ng-template>
+        <app-register></app-register>
+    </mat-tab>
+</mat-tab-group>
