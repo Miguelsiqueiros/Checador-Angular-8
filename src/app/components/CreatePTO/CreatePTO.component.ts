@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-CreatePTO',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePTOComponent implements OnInit {
 
-  constructor() { }
+  profileForm = new FormGroup({
+    pinNumber: new FormControl(''),
+    estimatedArrival: new FormControl('')
+  });
 
+  constructor() { }
   ngOnInit() {
+    
   }
 
 }
