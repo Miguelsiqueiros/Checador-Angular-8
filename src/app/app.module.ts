@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { CreatePTOComponent } from './components/CreatePTO/CreatePTO.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -15,24 +16,43 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
+import { RegisterComponent } from './components/register/register.component';
+import { PtoComponent } from './components/pto/pto.component';
+import { RankingComponent } from './components/ranking/ranking.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CheckInComponent } from './components/check-in/check-in.component';
+
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent, 
-    CreatePTOComponent
+    CreatePTOComponent,
+    NavbarComponent,
+    RegisterComponent,
+    PtoComponent,
+    RankingComponent,
+    FooterComponent,
+    CheckInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     MatSliderModule,
     MatStepperModule,
-    MatIconModule,
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule
+
+    MatTabsModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
