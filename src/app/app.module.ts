@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input'
 
 import { RegisterComponent } from './components/register/register.component';
 import { PtoComponent } from './components/pto/pto.component';
@@ -49,7 +50,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     MatButtonModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
 
   ],
   providers: [],
