@@ -1,16 +1,16 @@
 <mat-vertical-stepper>
 
   <mat-step label="Fill out your PIN">
-    <div [formGroup]="profileForm">
+    <mat-form-field [formGroup]="profileForm">
       <input matInput placeholder="Four digit PIN" formControlName="pinNumber" required>
-    </div> <br>
+    </mat-form-field> <br>
     <button mat-button matStepperNext>Next</button>
   </mat-step>
 
   <mat-step label="Estimated arrival">
-    <div [formGroup]="profileForm">
+    <mat-form-field [formGroup]="profileForm">
       <input matInput placeholder="Estimated arrival" formControlName="estimatedArrival" required>
-    </div><br>
+    </mat-form-field><br>
     <button mat-button matStepperPrevious>Back</button>
     <button mat-button matStepperNext>Next</button>
   </mat-step>
