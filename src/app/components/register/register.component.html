@@ -1,16 +1,16 @@
 <mat-vertical-stepper>
 
         <mat-step label="Enter your Full name">
-          <div [formGroup]="profileForm">
+          <mat-form-field [formGroup]="profileForm">
             <input matInput placeholder="Full name" formControlName="fullName" required>
-          </div> <br>
+          </mat-form-field> <br>
           <button mat-button matStepperNext>Next</button>
         </mat-step>
       
         <mat-step label="Profile Photo (Optional)">
-          <div [formGroup]="profileForm">
+          <mat-form-field [formGroup]="profileForm">
             <input matInput placeholder="Photo URL" formControlName="photoURL">
-          </div><br>
+          </mat-form-field><br>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </mat-step>
