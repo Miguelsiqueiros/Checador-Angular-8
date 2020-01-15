@@ -23,7 +23,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
 
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -48,8 +47,7 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatButtonModule
-
+    MatButtonModule,
     MatTabsModule,
     MatIconModule
 
