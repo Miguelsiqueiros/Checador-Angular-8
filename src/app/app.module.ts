@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+
+import { MatTableModule } from '@angular/material/table'
 
 import { RegisterComponent } from './components/register/register.component';
 import { RankingComponent } from './components/ranking/ranking.component';
@@ -39,7 +42,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    MatTableModule,
     MatSliderModule,
     MatStepperModule,
     MatRadioModule,
@@ -49,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatButtonModule,
     MatTabsModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatSlideToggleModule
 
   ],
   providers: [],
