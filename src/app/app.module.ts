@@ -18,7 +18,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input'
 
 import { RegisterComponent } from './components/register/register.component';
-import { PtoComponent } from './components/pto/pto.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
@@ -32,7 +31,6 @@ import {MatTabsModule} from '@angular/material/tabs';
     CreatePTOComponent,
     NavbarComponent,
     RegisterComponent,
-    PtoComponent,
     RankingComponent,
     FooterComponent,
     CheckInComponent
