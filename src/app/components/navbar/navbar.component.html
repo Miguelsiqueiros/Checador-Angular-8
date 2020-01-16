@@ -1,0 +1,27 @@
+<mat-tab-group mat-stretch-tabs [backgroundColor]="'warn'">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>check_circle_outline</mat-icon>
+        </ng-template>
+
+        <app-ranking></app-ranking>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>report_problem</mat-icon>
+        </ng-template>
+        <app-CreatePTO></app-CreatePTO>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>assignment</mat-icon>
+        </ng-template>
+
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>assignment_ind</mat-icon>
+        </ng-template>
+        <app-register></app-register>
+    </mat-tab>
+</mat-tab-group>
