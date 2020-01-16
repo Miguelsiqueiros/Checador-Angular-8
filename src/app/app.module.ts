@@ -25,6 +25,9 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTabsModule} from '@angular/material/tabs';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule,
     MatIconModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatGridListModule
 
   ],
   providers: [],
