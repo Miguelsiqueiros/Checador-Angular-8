@@ -26,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
 
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule,
     MatIconModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatGridListModule
 
   ],
   providers: [],
