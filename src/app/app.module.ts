@@ -25,6 +25,7 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { CheckInComponent } from './components/checkIn/checkIn.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CheckInComponent } from './components/checkIn/checkIn.component';
     MatTabsModule,
     MatIconModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatGridListModule
 
   ],
   providers: [],
