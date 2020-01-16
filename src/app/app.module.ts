@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CreatePTOComponent } from './components/CreatePTO/CreatePTO.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -23,9 +23,8 @@ import { MatTableModule } from '@angular/material/table'
 import { RegisterComponent } from './components/register/register.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CheckInComponent } from './components/check-in/check-in.component';
-
 import {MatTabsModule} from '@angular/material/tabs';
+
 import {MatGridListModule} from '@angular/material/grid-list';
 
 
@@ -36,18 +35,17 @@ import {MatGridListModule} from '@angular/material/grid-list';
     NavbarComponent,
     RegisterComponent,
     RankingComponent,
-    FooterComponent,
-    CheckInComponent
-  ],
+    FooterComponent
+    ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     MatTableModule,
+    BrowserAnimationsModule,
     MatSliderModule,
-    MatStepperModule,
     MatRadioModule,
+    MatStepperModule,
+    BrowserModule,
     FormsModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatButtonModule,

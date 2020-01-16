@@ -1,4 +1,6 @@
-<mat-slide-toggle></mat-slide-toggle>
+<mat-slide-toggle></mat-slide-toggle> 
+
+<div class=container></div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -16,7 +18,7 @@
 
     <!-- Weight Column -->
     <ng-container matColumnDef="delay">
-        <th mat-header-cell *matHeaderCellDef> Delay </th>
+        <th mat-header-cell *matHeaderCellDef> <mat-icon aria-hidden="false" aria-label="Example alarm icon">alarm</mat-icon> </th>
         <td mat-cell *matCellDef="let element"> {{element.delay}} min </td>
     </ng-container>
 
