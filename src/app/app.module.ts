@@ -24,8 +24,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { CheckInComponent } from './components/checkIn/checkIn.component';
-
 
 @NgModule({
   declarations: [
