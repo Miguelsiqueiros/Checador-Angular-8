@@ -1,11 +1,9 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html,
 body {
     height: 100%;
 }
 
 body {
-
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -14,4 +12,4 @@ table {
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
-  }
+}
