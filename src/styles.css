@@ -13,3 +13,13 @@ table {
     padding-left: 10%;
     padding-right: 10%;
 }
+.toLeft{
+    display: inline-block;
+    float: left;
+}
+
+.toRight{
+    display: inline-block;
+    float: right;
+}
+
