@@ -8,24 +8,24 @@ import { User } from '../Models/user'
 })
 export class CheckInService {
 
-constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-checkIn(pin: string){
-  let params = new HttpParams();
-  params = params.append("pin", pin)
-  return this.httpClient.post(`${environment.apiUrl}/methodName`, {params: params});
-}
+  checkIn(pin: string) {
+    let params = new HttpParams();
+    params = params.append("pin", pin)
+    return this.httpClient.post(`${environment.apiUrl}/methodName`, { params: params });
+  }
 
-weeklyRanking(){
-  return this.httpClient.get(`${environment.apiUrl}/methodName`);
-}
+  registerName(newUser: User) {
+    return this.httpClient.post(`${environment.apiUrl}/methodName`, newUser);
+  }
 
-dailyRanking(){
-  return this.httpClient.get(`${environment.apiUrl}/methodName`);
-}
+  dailyDatasource() {
+    //return this.httpClient.get(`${environment.apiUrl}/methodName`);
+  }
 
-registerName(newUser: User){
-  return this.httpClient.post(`${environment.apiUrl}/methodName`, newUser);
-}
+  weeklyDatasource() {
+    //return this.httpClient.get(`${environment.apiUrl}/methodName`);
+  }
 
 }

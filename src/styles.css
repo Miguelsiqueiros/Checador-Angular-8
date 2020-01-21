@@ -8,18 +8,3 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-table {
-    width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-.toLeft{
-    display: inline-block;
-    float: left;
-}
-
-.toRight{
-    display: inline-block;
-    float: right;
-}
-
