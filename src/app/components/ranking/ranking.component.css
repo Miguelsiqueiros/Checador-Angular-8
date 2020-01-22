@@ -1,53 +1,24 @@
-.mat-column-number{
-    flex: 0 0 20%;
+.tableHeader {
+    text-align: center;
 }
 
-.rankingTable {
+.dateTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tableDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding-left: 1%;
-    padding-right: 1%;
-    margin-left: 15%;
-}
-.mediumSize{
-    width: 70%;
 }
 
-.toRight{
-    display: inline-block;
+table {
+    width: 100%;
+    top: 0px;
+    text-align: center;
+    margin: 0px 50px 50px 50px;
 }
-
-.title{
-    width: 70%;
-  text-align: left;
-}
-
-.slider{
-  width: 40%;
-  text-align: right;
-}
-
-.tableHeader{
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
-.numberColumn{
-width: 20%;
-text-align: left;
-}
-
-.nameColumn{
-width: 50%;
-text-align: left;
-}
-
-.delayColumn{
-width: 30%;
-text-align: center;
-}
-
-th.mat-sort-header-sorted {
-    color: black;
-  }
-

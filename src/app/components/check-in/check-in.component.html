@@ -1,11 +1,13 @@
-<div class="checkIn-page-center">
+<div class="checkInDisplay">
     <h1 class="dayTimer">{{time | date: 'hh:mm:ss a'}}</h1>
 
-    <mat-form-field class="example-form-field">
+    <mat-form-field class="pinInput">
         <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="Insert your PIN" [(ngModel)]="value">
 
         <button type="submit" mat-raised-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>check</mat-icon>
-    </button>
+    <mat-icon>check</mat-icon>
+  </button>
     </mat-form-field>
 </div>
+
+<app-ranking></app-ranking>
