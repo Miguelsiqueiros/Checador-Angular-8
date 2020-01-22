@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:nnnn/api'
+  apiUrl: 'https://tempranon.herokuapp.com/api/v1/'
 };
 
 /*

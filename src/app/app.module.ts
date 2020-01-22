@@ -28,6 +28,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CheckInComponent } from './components/check-in/check-in.component';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatSlideToggleModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
 
   ],
   providers: [],
