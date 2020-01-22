@@ -29,6 +29,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -63,7 +65,7 @@ import { MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/mate
     MatToolbarModule,
     MatSidenavModule,
     MatListModule
-
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

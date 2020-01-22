@@ -1,5 +1,5 @@
 export class Pto {
-    pin: string;
+    pin: number;
     estimatedArrival: Date;
     day: boolean;
 }

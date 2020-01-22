@@ -1,24 +1,23 @@
 <div class="registerContainer">
     <mat-vertical-stepper>
+<mat-step label="Enter your Full name">
+        <mat-form-field [formGroup]="profileForm">
+            <input matInput placeholder="Full name" formControlName="fullName" required>
+        </mat-form-field> <br>
+        <button mat-button matStepperNext>Next</button>
+    </mat-step>
 
-        <mat-step label="Enter your Full name">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Full name" formControlName="fullName" required>
-            </mat-form-field> <br>
-            <button mat-button matStepperNext>Next</button>
-        </mat-step>
+    <mat-step label="Profile Photo (Optional)">
+        <mat-form-field [formGroup]="profileForm">
+            <input matInput placeholder="Photo URL" formControlName="photoURL">
+        </mat-form-field><br>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+    </mat-step>
 
-        <mat-step label="Profile Photo (Optional)">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Photo URL" formControlName="photoURL">
-            </mat-form-field><br>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </mat-step>
+    <mat-step label="Generate PIN">
+        <button mat-button matStepperNext [formGroup]="profileForm" (click)="SubmitData()">Finish</button>
+    </mat-step>
+</mat-vertical-stepper>
 
-        <mat-step label="Generate PIN">
-            <button mat-button matStepperNext>Finish</button>
-        </mat-step>
-
-    </mat-vertical-stepper>
 </div>
