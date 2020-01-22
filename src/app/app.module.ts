@@ -29,6 +29,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { CheckInComponent } from './components/check-in/check-in.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSlideToggleModule,
     MatGridListModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
 
   ],
   providers: [],
