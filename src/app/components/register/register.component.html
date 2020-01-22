@@ -16,6 +16,6 @@
     </mat-step>
 
     <mat-step label="Generate PIN">
-        <button mat-button matStepperNext>Finish</button>
+        <button mat-button matStepperNext [formGroup]="profileForm" (click)="SubmitData()">Finish</button>
     </mat-step>
 </mat-vertical-stepper>

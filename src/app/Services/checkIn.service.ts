@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from '../Models/user'
+import { ok } from 'assert';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class CheckInService {
   registerName(newUser: User) {
     if (environment.production == true) {
       return this.httpClient.post(`${environment.apiUrl}/methodName`, newUser);
+    }
+    else{
+      
     }
   }
 

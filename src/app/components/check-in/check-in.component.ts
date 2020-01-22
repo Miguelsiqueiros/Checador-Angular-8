@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CheckInService } from 'src/app/Services/checkIn.service';
 
 @Component({
   selector: 'app-check-in',
@@ -7,9 +8,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./check-in.component.css']
 })
 export class CheckInComponent implements OnInit {
-
-  constructor(private _snackBar: MatSnackBar) { }
-
+  constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService) { }
+  pinValue: number;
   time = new Date();
   ngOnInit() {
     setInterval(() => {
@@ -17,8 +17,13 @@ export class CheckInComponent implements OnInit {
     }, 1000);
   }
 
-  SuccessMessage(){
-    this._snackBar.open("Succesfully Checked In", "Got It", {
+  SubmitData(){
+    //this.checkInObject.checkIn(this.pinValue).subscribe(response => {}, error=>{});;
+    this.pinValue = null;
+  }
+
+  SuccessMessage(name:string, date: Date){
+    this._snackBar.open("Welcome " + name + ",you succesfully checked in at " + date.toString(), "Got It", {
       duration: 4000,
     })
   }
