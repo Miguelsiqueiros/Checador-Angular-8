@@ -1,27 +1,18 @@
-<mat-tab-group mat-stretch-tabs [backgroundColor]="'warn'">
-    <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon>check_circle_outline</mat-icon>
-        </ng-template>
-        <app-check-in></app-check-in>
-        <app-ranking></app-ranking>
-    </mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon>report_problem</mat-icon>
-        </ng-template>
-        <app-CreatePTO></app-CreatePTO>
-    </mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon>assignment</mat-icon>
-        </ng-template>
-
-    </mat-tab>
-    <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon>assignment_ind</mat-icon>
-        </ng-template>
-        <app-register></app-register>
-    </mat-tab>
-</mat-tab-group>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="menu-spacer">
+            <a mat-button [routerLink]="'/check-in'">
+                <mat-icon>check_circle_outline</mat-icon>
+            </a>
+            <a mat-button [routerLink]="'/PTO'">
+                <mat-icon>report_problem</mat-icon>
+            </a>
+            <a mat-button [routerLink]="'/contacts'">
+                <mat-icon>assignment</mat-icon>
+            </a>
+            <a mat-button [routerLink]="'/register'">
+                <mat-icon>assignment_ind</mat-icon>
+            </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
