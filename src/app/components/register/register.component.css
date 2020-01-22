@@ -1,8 +1,8 @@
-
 .registerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
 .subtitleText {
     font-size: x-large;
@@ -10,6 +10,4 @@
 
 .pinText {
     font-size: xx-large;
-}
-
 }
