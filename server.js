@@ -8,7 +8,7 @@ const expressLogger = expressPino({ logger });
 
 const app = express();
 
-const Port = process.env.Port || 8080;
+const Port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + "/dist/checador"));
 
