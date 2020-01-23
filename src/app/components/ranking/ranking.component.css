@@ -1,24 +1,53 @@
+.mat-column-number {
+    flex: 0 0 20%;
+}
+
+.rankingTable {
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: 15%;
+}
+
+.mediumSize {
+    width: 70%;
+}
+
+.toRight {
+    display: inline-block;
+}
+
+.title {
+    width: 70%;
+    text-align: left;
+}
+
+.slider {
+    width: 40%;
+    text-align: right;
+}
+
 .tableHeader {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.numberColumn {
+    width: 20%;
+    text-align: left;
+}
+
+.nameColumn {
+    width: 50%;
+    text-align: left;
+}
+
+.minutesColumn {
+    width: 30%;
     text-align: center;
 }
 
-.dateTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.tableDisplay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-table {
-    width: 100%;
-    top: 0px;
-    text-align: center;
-    margin: 0px 50px 50px 50px;
+th.mat-sort-header-sorted {
+    color: black;
 }
