@@ -30,11 +30,12 @@ export class RegisterComponent implements OnInit {
   SubmitData() {
     this.model.name = this.profileForm.get("fullName").value;
     this.model.image = this.profileForm.get("photoURL").value;
-    console.log(this.model);
     this.registerObject.registerName(this.model).subscribe(response => {  
       this.newPin = response;
       this.RetrievePin(this.newPin.pin);
-      }, error=>{});    
+      }, error=>{
+        this.IncompleteDataMessage();
+      });    
   }
   
   RetrievePin(pin: string) {
@@ -43,14 +44,8 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  AlreadyInUseMessage() {
-    this._snackBar.open("Username is already in use", "", {
-      duration: 3000,
-    })
-  }
-
   IncompleteDataMessage() {
-    this._snackBar.open("You have fields left to complete", "Got it!", {
+    this._snackBar.open("Please enter your full name", "Got it!", {
       duration: 4000,
     })
   }
