@@ -12,16 +12,16 @@ export class CheckInService {
   constructor(private httpClient: HttpClient) { }
 
   checkIn(pin: number) {
-    return this.httpClient.post(`${environment.apiUrl}/users/checkin`, pin);
+    return this.httpClient.post(`${environment.apiUrl}users/checkin`, pin);
   }
 
   registerName(newUser: User) {
-      return this.httpClient.post(`${environment.apiUrl}/users/create`, newUser);
+      return this.httpClient.post(`${environment.apiUrl}users/create`, newUser);
   }
 
   weeklyDatasource() {
     if (environment.production == true) {
-      return this.httpClient.get(`${environment.apiUrl}/users/weekly-ladder`);
+      return this.httpClient.get(`${environment.apiUrl}users/weekly-ladder`);
     }
     else {
       var DATA = [
@@ -43,7 +43,7 @@ export class CheckInService {
 
   dailyDatasource() {
     if (environment.production == true) {
-      return this.httpClient.get(`${environment.apiUrl}/users/daily-ladder`);
+      return this.httpClient.get(`${environment.apiUrl}users/daily-ladder`);
     }
     else {
       var DATA = [
