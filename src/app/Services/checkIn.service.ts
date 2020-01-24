@@ -12,7 +12,7 @@ export class CheckInService {
   constructor(private httpClient: HttpClient) { }
 
   checkIn(pin: number) {
-    return this.httpClient.post(`${environment.apiUrl}users/checkin`, pin);
+    return this.httpClient.post(`${environment.apiUrl}users/checkin`, {pin:pin});
   }
 
   registerName(newUser: User) {
