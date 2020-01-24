@@ -7,7 +7,7 @@ import { CheckInService } from 'src/app/Services/checkIn.service';
   styleUrls: ['./ranking.component.css']
 })
 export class RankingComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'minutes'];
+  displayedColumns: string[] = ['position', 'name', 'totalMinutes'];
   dataSource: any;
   toggle: boolean = false;
 
