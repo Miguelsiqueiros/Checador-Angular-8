@@ -18,7 +18,7 @@ export class CheckInComponent implements OnInit {
   }
 
   SubmitData(){
-    //this.checkInObject.checkIn(this.pinValue).subscribe(response => {}, error=>{});;
+    this.checkInObject.checkIn(this.pinValue).subscribe(response => {}, error=>{});;
     this.pinValue = null;
   }
 
