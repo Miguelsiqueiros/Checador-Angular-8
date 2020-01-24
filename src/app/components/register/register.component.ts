@@ -28,9 +28,8 @@ export class RegisterComponent implements OnInit {
   SubmitData() {
     this.model.name = this.profileForm.get("fullName").value;
     this.model.image = this.profileForm.get("photoURL").value;
-    this.registerObject.registerName(this.model).subscribe(response => {
-      this.RetrievePin('0000');
-    }, error=>{});
+    this.registerObject.registerName(this.model).subscribe(response => {    }, error=>{});
+    this.RetrievePin('0000');
   }
   
   RetrievePin(pin: string) {
