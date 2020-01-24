@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
     photoURL: new FormControl('')
   });
 
+  newPin:any;
+
 
   constructor(private _snackBar: MatSnackBar, private registerObject: CheckInService) { }
   pinText: string;
@@ -30,9 +32,9 @@ export class RegisterComponent implements OnInit {
     this.model.image = this.profileForm.get("photoURL").value;
     console.log(this.model);
     this.registerObject.registerName(this.model).subscribe(response => {  
-      console.log(response)
-      }, error=>{});
-    this.RetrievePin('0000');
+      this.newPin = response;
+      this.RetrievePin(this.newPin.pin);
+      }, error=>{});    
   }
   
   RetrievePin(pin: string) {
