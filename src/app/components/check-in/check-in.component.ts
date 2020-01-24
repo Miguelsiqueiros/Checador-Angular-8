@@ -21,13 +21,14 @@ export class CheckInComponent implements OnInit {
   SubmitData() {
     this.checkInObject.checkIn(this.pinValue).subscribe(response => {
       this.newCheck = response;
-      this.SuccessMessage(this.newCheck.name, this.newCheck.date);
+      this.SuccessMessage(this.newCheck.name, this.newCheck.date.toString());
     }, error => { });;
     this.pinValue = null;
   }
 
-  SuccessMessage(name: string, date: Date) {
-    this._snackBar.open("Welcome " + name + ", you succesfully checked in at " + date.toString(), "Got It", {
+  SuccessMessage(name: string, date: string) {
+    date = date.substring(10, 14) + " " + date.substring(19, 20);
+    this._snackBar.open("Welcome " + name + ", you succesfully checked in at " + date, "Got It", {
       duration: 4000,
     })
   }
