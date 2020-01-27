@@ -15,6 +15,7 @@ newPto(ptoData: Pto){
   return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
   }
   else{
+    
   }
 }
 

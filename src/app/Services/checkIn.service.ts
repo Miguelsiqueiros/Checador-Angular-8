@@ -16,7 +16,7 @@ export class CheckInService {
     return this.httpClient.post(`${environment.apiUrl}users/checkin`, {pin:pin});
     }
     else{
-
+      
     }
   }
 
@@ -25,7 +25,7 @@ export class CheckInService {
       return this.httpClient.post(`${environment.apiUrl}users/create`, newUser);
     }
     else{
-      
+
     }
   }
 
