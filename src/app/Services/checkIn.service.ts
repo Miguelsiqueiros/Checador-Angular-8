@@ -12,11 +12,21 @@ export class CheckInService {
   constructor(private httpClient: HttpClient) { }
 
   checkIn(pin: number) {
+    if(environment.production == true){
     return this.httpClient.post(`${environment.apiUrl}users/checkin`, {pin:pin});
+    }
+    else{
+
+    }
   }
 
   registerName(newUser: User) {
+    if(environment.production == true){
       return this.httpClient.post(`${environment.apiUrl}users/create`, newUser);
+    }
+    else{
+      
+    }
   }
 
   weeklyDatasource() {

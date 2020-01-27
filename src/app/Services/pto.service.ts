@@ -11,7 +11,11 @@ export class PtoService {
 constructor(private httpClient: HttpClient) { }
 
 newPto(ptoData: Pto){
+  if(environment.production == true){
   return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
+  }
+  else{
+  }
 }
 
 }
