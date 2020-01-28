@@ -66,7 +66,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatListModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    RankingComponent,
+    CheckInComponent
+  ],
   bootstrap: [AppComponent],
   exports:[
     CommonModule,
