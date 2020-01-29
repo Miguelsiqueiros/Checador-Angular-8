@@ -22,5 +22,8 @@
         { "name": "Pedro Esparza", "totalMinutes": 7, "pto": false },
         { "name": "Miguel Siqueiros", "totalMinutes": 8, "pto": false },
         { "name": "Alfa Venegas", "totalMinutes": 9, "pto": false }
+    ],
+    "check": [
+        { "pin": "1234" }
     ]
 }

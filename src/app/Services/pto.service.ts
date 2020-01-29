@@ -8,15 +8,15 @@ import { Pto } from '../Models/pto'
 })
 export class PtoService {
 
-constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-newPto(ptoData: Pto){
-  if(environment.production == true){
-  return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
+  newPto(ptoData: Pto) {
+    if (environment.production == true) {
+      return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
+    }
+    else {
+      return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
+    }
   }
-  else{
-    
-  }
-}
 
 }

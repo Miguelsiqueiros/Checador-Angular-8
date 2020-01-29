@@ -15,7 +15,6 @@ export class RankingComponent implements OnInit {
   title: string;
 
   ngOnInit() {
-    console.log("ngOnInit")
     if (this.toggle == true) {
       this.title = "Weekly Ranking";      
       this.dataSource = this.records.weeklyDatasource();
