@@ -1,3 +1,4 @@
+<h1 class="toCenter">Create a PTO</h1>
 <div class="ptoContainer">
     <mat-vertical-stepper>
 
@@ -5,14 +6,6 @@
             <mat-form-field [formGroup]="profileForm">
                 <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="PIN" formControlName="pinNumber" required>
             </mat-form-field> <br>
-            <button mat-button matStepperNext>Next</button>
-        </mat-step>
-
-        <mat-step label="Estimated arrival">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput type="time" value="10:00" placeholder="Estimated arrival" formControlName="estimatedArrival" required>
-            </mat-form-field><br>
-            <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
         </mat-step>
 
@@ -26,7 +19,7 @@
         </mat-step>
 
         <mat-step label="Submit">
-            <button mat-button matStepperNext>Finish PTO</button>
+            <button mat-button matStepperNext (click)="Submit()">Finish PTO</button>
         </mat-step>
 
     </mat-vertical-stepper>
