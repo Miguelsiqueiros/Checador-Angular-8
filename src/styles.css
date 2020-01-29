@@ -18,3 +18,23 @@ body {
 .mat-snack-bar-container {
     margin-top: 82px !important;
 }
+
+.success-snackbar {
+    background-color: #e2ffd8 !important;
+    color: #003a17 !important;
+}
+
+.info-snackbar {
+    background-color: #d2f3ff !important;
+    color: #003a79 !important;
+}
+
+.warning-snackbar {
+    background-color: #fff4ab !important;
+    color: #5a4f00 !important;
+}
+
+.error-snackbar {
+    background-color: #f9d9d9 !important;
+    color: #5d0000 !important;
+}

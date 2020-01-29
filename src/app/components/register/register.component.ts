@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
     this._snackBar.open("Your PIN number is " + pin, "Got it!", {
       duration: 100000,
       verticalPosition: 'top',
+      panelClass: 'info-snackbar',
     })
   }
 
@@ -49,6 +50,7 @@ export class RegisterComponent implements OnInit {
     this._snackBar.open("Please enter your full name", "Got it!", {
       duration: 4000,
       verticalPosition: 'top',
+      panelClass: 'warning-snackbar',
     })
   }
 }

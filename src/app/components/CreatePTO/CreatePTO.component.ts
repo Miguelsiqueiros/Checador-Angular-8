@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-CreatePTO',
   templateUrl: './CreatePTO.component.html',
-  styleUrls: ['./CreatePTO.component.css']
+  styleUrls: ['./CreatePTO.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CreatePTOComponent implements OnInit {
 
@@ -28,6 +29,7 @@ export class CreatePTOComponent implements OnInit {
     this._snackBar.open("You have fields left to complete", "Got it!", {
       duration: 4000,
       verticalPosition: 'top',
+      panelClass: 'warning-snackbar',
     })
   }
 
@@ -35,6 +37,7 @@ export class CreatePTOComponent implements OnInit {
     this._snackBar.open("The PIN you entered doesn't exist", "", {
       duration: 2000,
       verticalPosition: 'top',
+      panelClass: 'error-snackbar',
     })
   }
 
@@ -42,14 +45,15 @@ export class CreatePTOComponent implements OnInit {
     this._snackBar.open("User already has already a PTO for today", "", {
       duration: 2000,
       verticalPosition: 'top',
+      panelClass: 'warning-snackbar',
     })
   }
 
   SuccessMessage(){
     this._snackBar.open("PTO succesfully created, your penalization time is X minutes", "Got It", {
-      //duration: 5000,
+      duration: 5000,
       verticalPosition: 'top',
-      panelClass: ['success-snackbar'],
+      panelClass: 'success-snackbar',
     })
   }
 
