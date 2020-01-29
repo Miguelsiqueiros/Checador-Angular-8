@@ -20,6 +20,10 @@ export class CreatePTOComponent implements OnInit {
     
   }
 
+  Submit(){
+
+  }
+
   IncompleteDataMessage() {
     this._snackBar.open("You have fields left to complete", "Got it!", {
       duration: 4000,
@@ -39,7 +43,7 @@ export class CreatePTOComponent implements OnInit {
   }
 
   SuccessMessage(){
-    this._snackBar.open("PTO succesfully created", "Got It", {
+    this._snackBar.open("PTO succesfully created, your penalization time is X minutes", "Got It", {
       duration: 5000,
     })
   }

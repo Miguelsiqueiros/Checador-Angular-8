@@ -25,3 +25,35 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Add a fake json server to test frontend
+For this, you're gonna type in a new bash:
+
+npm install -g json-server
+
+(-g means it is globaly)
+
+Then you're gonna create a file named db.json at the main folder of the application and you are going to fill it with a json format like this:
+
+{
+    "weekly": [
+        { "name": "Antonio Nevarez", "totalMinutes": 0 },
+        { "name": "Alfa Venegas", "totalMinutes": 92 }
+    ],
+    "daily": [
+        { "name": "Antonio Nevarez", "totalMinutes": 0, "pto": false },
+        { "name": "Jemmy Preciado", "totalMinutes": 1, "pto": false }
+    ]
+}
+
+To get the data in your web app, you just have to call it like:
+
+ http://localhost:3000/weekly
+
+And at last, you're going to execute json-server --watch db.json on your terminal, at the same time of your frontend app in another terminal
+
+as resposne you'll get somethig like:
+
+{ "name": "Antonio Nevarez", "totalMinutes": 0 },
+        { "name": "Alfa Venegas", "totalMinutes": 92 }
+

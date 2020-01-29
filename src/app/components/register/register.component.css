@@ -11,3 +11,9 @@
 .pinText {
     font-size: xx-large;
 }
+
+.toCenter {
+    width: 100%;
+    text-align: center;
+    margin-top: 90px;
+}

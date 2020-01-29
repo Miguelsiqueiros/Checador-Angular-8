@@ -31,6 +31,10 @@ export class RankingComponent implements OnInit {
     this.ngOnInit();
   }
 
+  Refresh(){
+    this.ngOnInit();
+  }
+
  
 
   
