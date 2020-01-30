@@ -12,6 +12,7 @@ import { AlertsService } from 'src/app/Services/alerts.service';
   selector: 'app-CreatePTO',
   templateUrl: './CreatePTO.component.html',
   styleUrls: ['./CreatePTO.component.css'],
+  //this may be important to consider if alerts don't work because of the new service
   encapsulation: ViewEncapsulation.None
 })
 
@@ -37,24 +38,5 @@ export class CreatePTOComponent implements OnInit {
       this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
       });
   }
-
-  AlertMessage(alertMessage: string, alertType: string) {
-    var time;
-    var dismiss;
-    if (alertType == "warning" || alertType == "error") {
-      dismiss = ""
-      time = 2000
-    } else if (alertType == "success") {
-      dismiss = "";
-      time = 3000;
-    } else if (alertType == "info") {
-      dismiss = "Got it!";
-      time = 10000;
-    }
-    this._snackBar.open(alertMessage, dismiss, {
-      duration: time,
-      verticalPosition: 'top',
-      panelClass: alertType + '-snackbar',
-    })
-  }
+  
 }
