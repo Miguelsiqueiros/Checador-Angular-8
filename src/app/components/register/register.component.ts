@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/Models/user';
 import { CheckInService } from 'src/app/Services/checkIn.service';
+import { AlertsService } from 'src/app/Services/alerts.service';
 
 @Component({
   selector: 'app-register',
@@ -16,41 +17,25 @@ export class RegisterComponent implements OnInit {
     photoURL: new FormControl('')
   });
 
-  newPin:any;
+  responseJson:any;
 
 
-  constructor(private _snackBar: MatSnackBar, private registerObject: CheckInService) { }
+  constructor(private _snackBar: MatSnackBar, private registerObject: CheckInService, private alerts: AlertsService) { }
   pinText: string;
   model: User;
   ngOnInit() {
     this.model = new User();
-    this.pinText = "1426";
   }
 
   SubmitData() {
     this.model.name = this.profileForm.get("fullName").value;
     this.model.image = this.profileForm.get("photoURL").value;
     this.registerObject.registerName(this.model).subscribe(response => {  
-      this.newPin = response;
-      this.RetrievePin(this.newPin.pin);
+      this.responseJson = response;
+      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
       }, error=>{
-        this.IncompleteDataMessage();
+      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type);
       });    
-  }
-  
-  RetrievePin(pin: string) {
-    this._snackBar.open("Your PIN number is " + pin, "Got it!", {
-      duration: 100000,
-      verticalPosition: 'top',
-      panelClass: 'info-snackbar',
-    })
-  }
-
-  IncompleteDataMessage() {
-    this._snackBar.open("Please enter your full name", "Got it!", {
-      duration: 4000,
-      verticalPosition: 'top',
-      panelClass: 'warning-snackbar',
-    })
-  }
+  } 
 }
+  

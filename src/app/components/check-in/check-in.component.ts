@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CheckInService } from 'src/app/Services/checkIn.service';
 import { CdkTable } from '@angular/cdk/table';
 import { RankingComponent } from '../ranking/ranking.component';
+import { AlertsService } from 'src/app/Services/alerts.service';
 
 @Component({
   selector: 'app-check-in',
@@ -10,10 +11,10 @@ import { RankingComponent } from '../ranking/ranking.component';
   styleUrls: ['./check-in.component.css']
 })
 export class CheckInComponent implements OnInit {
-  constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService, private RanTable: RankingComponent) { }
+  constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService, private RanTable: RankingComponent, private alerts:AlertsService) { }
   pinValue: number;
   time = new Date();
-  newCheck: any;
+  responseJson: any;
   ngOnInit() {
     setInterval(() => {
       this.time = new Date();
@@ -22,31 +23,34 @@ export class CheckInComponent implements OnInit {
 
   SubmitData() {
     this.checkInObject.checkIn(this.pinValue).subscribe(response => {
-      this.newCheck = response;
-      this.SuccessMessage(this.newCheck.name, this.newCheck.date.toString());
+      this.responseJson = response;
+      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
       this.RanTable.Refresh();
-    }, error => { });;
+    }, error => {
+      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
+    });
     this.pinValue = null;
   }
 
-  SuccessMessage(name: string, date: string) {
-    date = date.substring(10, 14) + " " + date.substring(19, 20);
-    this._snackBar.open("Welcome " + name + ", you succesfully checked in at " + date, "Got It", {
-      duration: 4000,
+
+  AlertMessage(alertMessage: string, alertType: string) {
+    var time;
+    var dismiss;
+    if (alertType == "warning" || alertType == "error") {
+      dismiss = ""
+      time = 2000
+    } else if (alertType == "success") {
+      dismiss = "";
+      time = 3000;
+    } else if (alertType == "info") {
+      dismiss = "Got it!";
+      time = 10000;
+    }
+    this._snackBar.open(alertMessage, dismiss, {
+      duration: time,
+      verticalPosition: 'top',
+      panelClass: alertType + '-snackbar',
     })
   }
-
-  WrongPinMessage() {
-    this._snackBar.open("The PIN you entered doesn't exist", "", {
-      duration: 2000,
-    })
-  }
-
-  AlreadyCheckedMessage() {
-    this._snackBar.open("User already checked in", "", {
-      duration: 2000,
-    })
-  }
-
 
 }
