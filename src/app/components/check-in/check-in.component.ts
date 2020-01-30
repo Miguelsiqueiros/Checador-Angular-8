@@ -24,10 +24,10 @@ export class CheckInComponent implements OnInit {
   SubmitData() {
     this.checkInObject.checkIn(this.pinValue).subscribe(response => {
       this.responseJson = response;
-      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       this.RanTable.Refresh();
     }, error => {
-      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
     });
     this.pinValue = null;
   }

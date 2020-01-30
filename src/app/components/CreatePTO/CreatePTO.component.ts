@@ -33,9 +33,9 @@ export class CreatePTOComponent implements OnInit {
     this.model.day = this.selection;
     this.ptoObject.newPto(this.model).subscribe(response => {  
       this.responseJson = response;
-      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       }, error=>{
-      this.alerts.AlertMessage(this.responseJson.info, this.responseJson.type)
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       });
   }
   

@@ -8,7 +8,7 @@ export class AlertsService {
 
   constructor(private _snackBar: MatSnackBar) { }
 
-  AlertMessage(alertMessage: string, alertType: string) {
+  alertMessage(alertMessage: string, alertType: string) {
     var time;
     var dismiss;
     if (alertType == "warning" || alertType == "error") {
