@@ -1,52 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Type } from '@angular/compiler';
+import { stringify } from '@angular/compiler/src/util';
+import { Button } from 'protractor';
+import { PtoService } from 'src/app/Services/pto.service';
+import { Pto } from 'src/app/Models/pto';
+import { AlertsService } from 'src/app/Services/alerts.service';
 
 @Component({
   selector: 'app-CreatePTO',
   templateUrl: './CreatePTO.component.html',
-  styleUrls: ['./CreatePTO.component.css']
+  styleUrls: ['./CreatePTO.component.css'],
+  //this may be important to consider if alerts don't work because of the new service
+  encapsulation: ViewEncapsulation.None
 })
+
 export class CreatePTOComponent implements OnInit {
+  pinValue: number;
+  selection: number;
+  model:Pto;
+  responseJson: any;
 
-  profileForm = new FormGroup({
-    pinNumber: new FormControl(''),
-    estimatedArrival: new FormControl('')
-  });
 
-  constructor(private _snackBar: MatSnackBar) { }
-
+  constructor(private _snackBar: MatSnackBar, private ptoObject: PtoService, private alerts: AlertsService) { }
   ngOnInit() {
-    
+    this.model = new Pto();
   }
 
-  Submit(){
-
+  Submit() {
+    this.model.pin = this.pinValue;
+    this.model.day = this.selection;
+    this.ptoObject.newPto(this.model).subscribe(response => {  
+      this.responseJson = response;
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
+      }, error=>{
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
+      });
   }
-
-  IncompleteDataMessage() {
-    this._snackBar.open("You have fields left to complete", "Got it!", {
-      duration: 4000,
-    })
-  }
-
-  WrongPinMessage(){
-    this._snackBar.open("The PIN you entered doesn't exist", "", {
-      duration: 2000,
-    })
-  }
-
-  AlreadyPTOMessage(){
-    this._snackBar.open("User already has already a PTO for today", "", {
-      duration: 2000,
-    })
-  }
-
-  SuccessMessage(){
-    this._snackBar.open("PTO succesfully created, your penalization time is X minutes", "Got It", {
-      duration: 5000,
-    })
-  }
-
-
+  
 }

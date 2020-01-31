@@ -3,16 +3,16 @@
     <mat-vertical-stepper>
 
         <mat-step label="Fill out your PIN">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="PIN" formControlName="pinNumber" required>
+            <mat-form-field>
+                <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="PIN" [(ngModel)]="pinValue" required>
             </mat-form-field> <br>
             <button mat-button matStepperNext>Next</button>
         </mat-step>
 
         <mat-step label="Day of PTO">
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="0">Yesterday</mat-radio-button> <br><br>
-                <mat-radio-button value="1">Today</mat-radio-button>
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="selection">
+                <mat-radio-button [value]="0">Yesterday</mat-radio-button> <br><br>
+                <mat-radio-button [value]="1">Today</mat-radio-button>
             </mat-radio-group> <br><br>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
