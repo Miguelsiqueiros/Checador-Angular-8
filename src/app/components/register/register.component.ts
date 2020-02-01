@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     this.model.image = this.profileForm.get("photoURL").value;
     this.registerObject.registerName(this.model).subscribe(response => {  
       this.responseJson = response;
-      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
+      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type);
       }, error=>{
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type);
       });    
