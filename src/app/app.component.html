@@ -1,4 +1,41 @@
-<div class="main-container">
-    <router-outlet></router-outlet>
-</div>
-<app-navbar></app-navbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav>
+        <p><button mat-button (click)="sidenav.toggle()"><mat-icon>keyboard_backspace</mat-icon></button></p>
+        <div class="sidebar-content-container">
+            <p><a class="sidebar-content" [routerLink]="'/check-in'">User profile <mat-icon>person</mat-icon></a></p>
+            <p>
+                <a class="sidebar-content" [routerLink]="'/register'">
+                   Register 
+                    <mat-icon>assignment_ind</mat-icon>
+                </a>
+            </p>
+            <p><a class="sidebar-content" [routerLink]="'/check-in'">Help <mat-icon>help</mat-icon></a></p>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <div class="main-container">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- <app-navbar></app-navbar> -->
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <div class="menu-spacer">
+                    <a mat-button (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </a>
+                    <a mat-button [routerLink]="'/check-in'">
+                        <mat-icon>check_circle_outline</mat-icon>
+                    </a>
+                    <a mat-button [routerLink]="'/PTO'">
+                        <mat-icon>report_problem</mat-icon>
+                    </a>
+                    <a mat-button [routerLink]="'/contacts'">
+                        <mat-icon>assignment</mat-icon>
+                    </a>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </mat-sidenav-content>
+</mat-sidenav-container>
