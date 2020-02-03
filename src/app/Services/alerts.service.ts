@@ -23,8 +23,6 @@ export class AlertsService {
       time = 10000;
     }
     
-    this.logger.log(`Response alert with Info: '${alertMessage}', of type '${alertType}, with a duration of ${time} milliseconds`);
-
     return this._snackBar.open(alertMessage, dismiss, {
       duration: time,
       verticalPosition: 'top',

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckInService } from 'src/app/Services/checkIn.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-ranking',
@@ -11,18 +12,21 @@ export class RankingComponent implements OnInit {
   dataSource: any;
   toggle: boolean = false;
 
-  constructor(private records: CheckInService) { }
+  constructor(private records: CheckInService, private logger: NGXLogger) { }
   title: string;
 
   ngOnInit() {
     if (this.toggle == true) {
       this.title = "Weekly Ranking";      
-      this.dataSource = this.records.weeklyDatasource();
-      
+      this.dataSource = this.records.weeklyDatasource().subscribe(error=>{
+        this.logger.debug(error);
+      });      
     }
     else {
       this.title = "Daily Ranking";
-      this.dataSource = this.records.dailyDatasource();
+      this.dataSource = this.records.dailyDatasource().subscribe(error=>{
+        this.logger.debug(error);
+      });
     }
   }
 

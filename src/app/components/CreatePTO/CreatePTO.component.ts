@@ -39,6 +39,7 @@ export class CreatePTOComponent implements OnInit {
       this.responseJson = response;
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       }, error=>{
+        this.logger.debug(error);
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       });
   }
