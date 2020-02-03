@@ -13,17 +13,17 @@ export class AlertsService {
     var time;
     var dismiss;
     if (alertType == "warning" || alertType == "error") {
-      dismiss = "Got it!"
+      dismiss = ""
       time = 2000
     } else if (alertType == "success") {
-      dismiss = "Close";
+      dismiss = "";
       time = 3000;
     } else if (alertType == "info") {
       dismiss = "Got it!";
       time = 10000;
     }
     
-    this.logger.info("Response alert with Info: '" + alertMessage + "', of type '" + alertType + ", with a duration of " + time + " milliseconds");
+    this.logger.log(`Response alert with Info: '${alertMessage}', of type '${alertType}, with a duration of ${time} milliseconds`);
 
     return this._snackBar.open(alertMessage, dismiss, {
       duration: time,

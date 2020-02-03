@@ -13,11 +13,11 @@ export class PtoService {
 
   newPto(ptoData: Pto) {
     if (environment.production == true) {
-      this.logger.info("Attempt to create new PTO " + Pto + "(POST in Production)");
+      this.logger.info(`Attempt to create new PTO ${Pto} (POST in Production)`);
       return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
     }
     else {
-      this.logger.info("Attempt to create new PTO " + Pto + "(POST in Development)");
+      this.logger.info(`Attempt to create new PTO ${Pto} (POST in Development)`);
       return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
     }
   }
