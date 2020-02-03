@@ -4,6 +4,7 @@ import { CheckInService } from 'src/app/Services/checkIn.service';
 import { CdkTable } from '@angular/cdk/table';
 import { RankingComponent } from '../ranking/ranking.component';
 import { AlertsService } from 'src/app/Services/alerts.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-check-in',
@@ -11,7 +12,7 @@ import { AlertsService } from 'src/app/Services/alerts.service';
   styleUrls: ['./check-in.component.css']
 })
 export class CheckInComponent implements OnInit {
-  constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService, private RanTable: RankingComponent, private alerts:AlertsService) { }
+  constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService, private RanTable: RankingComponent, private alerts:AlertsService, private logger:NGXLogger) { }
   pinValue: number;
   time = new Date();
   responseJson: any;
@@ -27,6 +28,7 @@ export class CheckInComponent implements OnInit {
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       this.RanTable.Refresh();
     }, error => {
+      this.logger.debug(error);
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
     });
     this.pinValue = null;
