@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask';
 
 // Components
 import { AppComponent } from './app.component';
@@ -66,8 +67,9 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatSnackBarModule, 
-    LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR})
+    LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
+    MatSnackBarModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     RankingComponent,

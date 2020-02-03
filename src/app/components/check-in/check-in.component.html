@@ -2,7 +2,7 @@
     <h1 class="dayTimer">{{time | date: 'hh:mm:ss a'}}</h1>
 
     <mat-form-field class="example-form-field">
-        <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="Insert your PIN" [(ngModel)]="pinValue">
+        <input matInput class="pin-number-input" type="tel" inputmode="numeric" mask="0000" placeholder="Insert your PIN" [(ngModel)]="pinValue">
 
         <button type="submit" mat-raised-button *ngIf="pinValue" matSuffix mat-icon-button aria-label="Clear" (click)="SubmitData()">
       <mat-icon>check</mat-icon>
