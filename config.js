@@ -6,7 +6,7 @@ const filePath = "./src/environments/environment.prod.ts";
 
 const envVars = `export const environment = {
     production: true,
-    API_URL: '${process.env.API_URL}/api/v1/',
+    apiUrl: '${process.env.API_URL}/api/v1/',
 }`;
 
 fs.writeFile(filePath, envVars, error =>
