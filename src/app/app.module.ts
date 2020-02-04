@@ -28,9 +28,9 @@ import { MatTableModule } from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-import { MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule} from '@angular/material';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule
   ],
   providers: [
     RankingComponent,

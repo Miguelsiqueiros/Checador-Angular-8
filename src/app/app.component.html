@@ -1,23 +1,22 @@
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="sidebar-container">
     <mat-sidenav #sidenav>
         <p><button mat-button (click)="sidenav.toggle()"><mat-icon>keyboard_backspace</mat-icon></button></p>
         <div class="sidebar-content-container">
-            <p><a class="sidebar-content" [routerLink]="'/check-in'">User profile <mat-icon>person</mat-icon></a></p>
-            <p>
-                <a class="sidebar-content" [routerLink]="'/register'">
-                   Register 
+            <mat-nav-list>
+                <a mat-list-item [routerLink]="[ '/check-in' ]" routerLinkActive="active_routing">User profile
+                    <mat-icon>person</mat-icon>
+                </a>
+                <a mat-list-item [routerLink]="[ '/register' ]" routerLinkActive="active_routing">Register 
                     <mat-icon>assignment_ind</mat-icon>
                 </a>
-            </p>
-            <p><a class="sidebar-content" [routerLink]="'/check-in'">Help <mat-icon>help</mat-icon></a></p>
+                <a mat-list-item [routerLink]="[ '/register' ]" routerLinkActive="active_routing">Help 
+                    <mat-icon>help</mat-icon>
+                </a>
+            </mat-nav-list>
         </div>
     </mat-sidenav>
 
     <mat-sidenav-content>
-
-        <div class="main-container">
-            <router-outlet></router-outlet>
-        </div>
         <!-- <app-navbar></app-navbar> -->
         <mat-toolbar color="primary">
             <mat-toolbar-row>
@@ -25,17 +24,20 @@
                     <a mat-button (click)="sidenav.toggle()">
                         <mat-icon>menu</mat-icon>
                     </a>
-                    <a mat-button [routerLink]="'/check-in'">
+                    <a mat-button [routerLink]="'/check-in'" routerLinkActive="active_routing">
                         <mat-icon>check_circle_outline</mat-icon>
                     </a>
-                    <a mat-button [routerLink]="'/PTO'">
+                    <a mat-button [routerLink]="'/PTO'" routerLinkActive="active_routing">
                         <mat-icon>report_problem</mat-icon>
                     </a>
-                    <a mat-button [routerLink]="'/contacts'">
+                    <a mat-button [routerLink]="'/contacts'" routerLinkActive="active_routing">
                         <mat-icon>assignment</mat-icon>
                     </a>
                 </div>
             </mat-toolbar-row>
         </mat-toolbar>
+        <div class="main-container">
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
