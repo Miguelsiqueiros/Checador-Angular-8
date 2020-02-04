@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Renderer2 } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
+import { NGXLogger } from 'ngx-logger';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlertsService {
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, private logger: NGXLogger) { }
 
   alertMessage(alertMessage: string, alertType: string) {
     var time;
@@ -21,11 +22,11 @@ export class AlertsService {
       dismiss = "Got it!";
       time = 10000;
     }
-    this._snackBar.open(alertMessage, dismiss, {
+    
+    return this._snackBar.open(alertMessage, dismiss, {
       duration: time,
       verticalPosition: 'top',
       panelClass: alertType + '-snackbar',
     })
   }
-
 }

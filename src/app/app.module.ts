@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2 } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgxMaskModule } from 'ngx-mask';
 
 // Components
 import { AppComponent } from './app.component';
@@ -31,6 +32,9 @@ import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule, MatSidenavModule} from '@angular/material';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
+
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+
 
 @NgModule({
   declarations: [
@@ -63,13 +67,16 @@ import {MatListModule} from '@angular/material/list';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule,
+    Module,
     MatSnackBarModule,
-    MatListModule
+    MatListModule,
+    LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
+    MatSnackBarModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [
     RankingComponent,
-    CheckInComponent
+    CheckInComponent,
   ],
   bootstrap: [AppComponent],
   exports:[
