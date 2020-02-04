@@ -67,7 +67,6 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    Module,
     MatSnackBarModule,
     MatListModule,
     LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
