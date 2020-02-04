@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { User } from 'src/app/Models/user';
+import { User } from '../../Models/user';
 import { CheckInService } from 'src/app/Services/checkIn.service';
 import { AlertsService } from 'src/app/Services/alerts.service';
 import { NGXLogger } from 'ngx-logger';
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   responseJson:any;
 
 
-  constructor(private _snackBar: MatSnackBar, private registerObject: CheckInService, private alerts: AlertsService, private logger:NGXLogger) { }
+  constructor(private registerObject: CheckInService, public alerts: AlertsService, private logger:NGXLogger) { }
   pinText: string;
   model: User;
   ngOnInit() {

@@ -5,7 +5,7 @@ import { Type } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
 import { Button } from 'protractor';
 import { PtoService } from 'src/app/Services/pto.service';
-import { Pto } from 'src/app/Models/pto';
+import { Pto } from '../../Models/pto';
 import { AlertsService } from 'src/app/Services/alerts.service';
 import { NGXLogger } from 'ngx-logger'
 
@@ -24,11 +24,11 @@ export class CreatePTOComponent implements OnInit {
   responseJson: any;
 
 
-  constructor(private _snackBar: MatSnackBar, private ptoObject: PtoService, private alerts: AlertsService, private logger: NGXLogger) { 
+  constructor(private ptoObject: PtoService, private alerts: AlertsService, private logObj: NGXLogger) { 
     
   }
   ngOnInit() {
-    this.logger.debug("ngOnInit");
+    this.logObj.debug("ngOnInit");
     this.model = new Pto();
   }
 
@@ -39,7 +39,7 @@ export class CreatePTOComponent implements OnInit {
       this.responseJson = response;
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       }, error=>{
-        this.logger.debug(error);
+        this.logObj.debug(error);
       this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
       });
   }

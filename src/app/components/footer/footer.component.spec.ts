@@ -22,4 +22,10 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  // new test by ngentest
+  it('should run #ngOnInit()', async () => {
+
+    component.ngOnInit();
+
+  });
 });
