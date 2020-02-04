@@ -57,3 +57,20 @@ as resposne you'll get somethig like:
 { "name": "Antonio Nevarez", "totalMinutes": 0 },
         { "name": "Alfa Venegas", "totalMinutes": 92 }
 
+## Generate UnitTest Code with JEST
+
+i recommend to run the command:
+
+npm install jest @types/jest jest-preset-angular 
+
+instead of just npm install
+
+Jest is a dependency which will help you to autogenerate unit testing files and code for the frontend, based on the interactions and services we define in the TS code, it ONLY generates 60% of the code, you have to create more cases based on the behavior of your component
+
+To generate the UnitTest Code with JEST, you only have to run:
+
+ngentest path/of/your/component.ts
+
+and it will be shown in the terminal, you copy that code and paste it into the name.component.spec.ts  file
+
+it;s recomended to import in your components with a relative path (././) so JEST can find the file you are importing in the file you want to test
