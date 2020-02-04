@@ -67,17 +67,17 @@ describe('RegisterComponent', () => {
     fixture.destroy();
   });
 
-  it('should run #constructor()', async () => {
+  it('should run #constructor() of component', async () => {
     expect(component).toBeTruthy();
   });
 
-  it('should run #ngOnInit()', async () => {
+  it('should show component', async () => {
 
     component.ngOnInit();
 
   });
 
-  it('should run #SubmitData()', async () => {
+  it('should submit data', async () => {
     component.profileForm = component.profileForm || {};
     component.profileForm.get = jest.fn().mockReturnValue({
       value: {}

@@ -66,7 +66,7 @@ describe('RankingComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should run #ngOnInit()', async () => {
+  it('should run #ngOnInit() of component', async () => {
     component.records = component.records || {};
     component.records.weeklyDatasource = jest.fn().mockReturnValue(observableOf({}));
     component.records.dailyDatasource = jest.fn().mockReturnValue(observableOf({}));
@@ -78,13 +78,13 @@ describe('RankingComponent', () => {
     // expect(component.logger.debug).toHaveBeenCalled();
   });
 
-  it('should run #toggleRanking()', async () => {
+  it('should toggle ranking table', async () => {
     component.ngOnInit = jest.fn();
     component.toggleRanking();
     // expect(component.ngOnInit).toHaveBeenCalled();
   });
 
-  it('should run #Refresh()', async () => {
+  it('should run #Refresh() the table', async () => {
     component.ngOnInit = jest.fn();
     component.Refresh();
     // expect(component.ngOnInit).toHaveBeenCalled();

@@ -71,14 +71,14 @@ describe('CreatePTOComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should run #ngOnInit()', async () => {
+  it('should run #ngOnInit() of component', async () => {
     component.logObj = component.logObj || {};
     component.logObj.debug = jest.fn();
     component.ngOnInit();
     // expect(component.logObj.debug).toHaveBeenCalled();
   });
 
-  it('should run #Submit()', async () => {
+  it('should #Submit() data', async () => {
     component.model = component.model || {};
     component.model.pin = 'pin';
     component.model.day = 'day';
