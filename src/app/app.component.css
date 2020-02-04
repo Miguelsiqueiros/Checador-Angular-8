@@ -3,19 +3,12 @@
     margin-bottom: 50px;
 }
 
-.example-container {
+.sidebar-container {
     position: absolute;
-    top: 0;
+    top: 15px;
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.example-radio-group {
-    display: block;
-    border: 1px solid #555;
-    margin: 20px;
-    padding: 10px;
 }
 
 mat-sidenav-content {
@@ -40,10 +33,6 @@ mat-sidenav {
     padding-left: 10px;
     display: block;
     color: black;
-}
-
-a:hover {
-    background-color: rgba(221, 221, 221, 0.486);
 }
 
 a:visited {

@@ -29,11 +29,12 @@ import { MatTableModule } from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-import { MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule} from '@angular/material';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatListModule} from '@angular/material/list';
 
-//Logger
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+
 
 @NgModule({
   declarations: [
@@ -66,6 +67,8 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
+    Module,
+    MatSnackBarModule,
     MatListModule,
     LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
     MatSnackBarModule,
