@@ -19,6 +19,10 @@ mat-sidenav {
     width: 300px;
 }
 
+.sidebar-toogle-button {
+    width: 100%;
+}
+
 .sidebar-content-container {
     display: flex;
     align-items: left;
@@ -32,7 +36,20 @@ mat-sidenav {
     text-decoration: none;
     padding-left: 10px;
     display: block;
-    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.sidebar-content:hover {
+    background-color: #0290EE;
+    color: white;
+}
+
+.mat-list-item:hover {
+    background-color: #0290EE;
+    color: white;
 }
 
 a:visited {
