@@ -28,7 +28,6 @@ export class CreatePTOComponent implements OnInit {
     
   }
   ngOnInit() {
-    this.logObj.debug("ngOnInit");
     this.model = new Pto();
   }
 
