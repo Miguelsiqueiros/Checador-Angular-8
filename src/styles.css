@@ -7,8 +7,8 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     position: relative;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 15px;
+    overflow: hidden;
 }
 
 .mat-snack-bar-handset .mat-snack-bar-container {
