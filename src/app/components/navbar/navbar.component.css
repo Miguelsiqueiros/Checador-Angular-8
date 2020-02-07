@@ -1,14 +1,15 @@
 .main-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+
 }
 
 .sidebar-container {
   position: absolute;
-  top: 15px;
+  top: -15px;
   bottom: 0;
   left: 0;
   right: 0;
+
 }
 
 mat-sidenav-content {
@@ -17,10 +18,12 @@ mat-sidenav-content {
 
 mat-sidenav {
   width: 300px;
+
 }
 
-.sidebar-toogle-button {
+.sidebar-toggle-button {
   width: 100%;
+
 }
 
 .sidebar-content-container {
@@ -29,6 +32,7 @@ mat-sidenav {
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 }
 
 .sidebar-content {
@@ -74,13 +78,29 @@ mat-toolbar {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
 }
 
 .menu-spacer>a {
   width: 25%;
   height: 100%;
+  margin-top: 10px;
 }
 
 .menu-spacer a:hover {
   background-color: salmon;
+}
+
+.menu-item-title{
+  display: flex;
+  margin-top: -15px;
+  font-family: Roboto;
+  font-size: 80%;
+}
+
+a{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
