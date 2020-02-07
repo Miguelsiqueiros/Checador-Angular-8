@@ -38,15 +38,15 @@
                   <a mat-button (click)="sidenav.toggle()">
                       <mat-icon >menu</mat-icon>
                   </a>
-                  <a mat-button [ngStyle]="{'color':router.url === '/check-in' ? 'white' : '#b33a13' }" [routerLink]="'/check-in'" routerLinkActive="active_routing">
+                  <a mat-button class="menu-item" [ngStyle]="{'color':router.url === '/check-in' ? 'white' : '#b33a13' }" [routerLink]="'/check-in'" routerLinkActive="active_routing">
                       <mat-icon >check_circle</mat-icon>
                       <span class="menu-item-title">Check-in</span>
                     </a>
-                  <a mat-button [ngStyle]="{'color':router.url === '/PTO' ? 'white' : '#b33a13' }" [routerLink]="'/PTO'" routerLinkActive="active_routing">
+                  <a mat-button class="menu-item" [ngStyle]="{'color':router.url === '/PTO' ? 'white' : '#b33a13' }" [routerLink]="'/PTO'" routerLinkActive="active_routing">
                       <mat-icon >report_problem</mat-icon>
                       <span class="menu-item-title">PTO</span>
                     </a>
-                  <a mat-button [ngStyle]="{'color':router.url === '/contacts' ? 'white' : '#b33a13' }" [routerLink]="'/contacts'" routerLinkActive="active_routing">
+                  <a mat-button class="menu-item" [ngStyle]="{'color':router.url === '/contacts' ? 'white' : '#b33a13' }" [routerLink]="'/contacts'" routerLinkActive="active_routing">
                       <mat-icon >dashboard</mat-icon>
                       <span class="menu-item-title">Dashboard</span>
                     </a>

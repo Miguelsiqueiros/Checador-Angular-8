@@ -98,9 +98,7 @@ mat-toolbar {
   font-size: 80%;
 }
 
-a{
+.menu-item{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
 }
