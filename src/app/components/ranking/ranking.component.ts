@@ -18,15 +18,11 @@ export class RankingComponent implements OnInit {
   ngOnInit() {
     if (this.toggle == true) {
       this.title = "Weekly Ranking";      
-      this.dataSource = this.records.weeklyDatasource().subscribe(error=>{
-        this.logger.debug(error);
-      });      
+      this.dataSource = this.records.weeklyDatasource();
     }
     else {
       this.title = "Daily Ranking";
-      this.dataSource = this.records.dailyDatasource().subscribe(error=>{
-        this.logger.debug(error);
-      });
+      this.dataSource = this.records.dailyDatasource();
     }
   }
 
