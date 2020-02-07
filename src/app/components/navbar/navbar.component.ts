@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { EventEmitter } from 'protractor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { EventEmitter } from 'protractor';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit() {
   }

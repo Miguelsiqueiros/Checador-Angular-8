@@ -36,16 +36,16 @@
           <mat-toolbar-row>
               <div class="menu-spacer">
                   <a mat-button (click)="sidenav.toggle()">
-                      <mat-icon>menu</mat-icon>
+                      <mat-icon >menu</mat-icon>
                   </a>
                   <a mat-button [routerLink]="'/check-in'" routerLinkActive="active_routing">
-                      <mat-icon>check_circle_outline</mat-icon>
+                      <mat-icon [ngStyle]="{'color':router.url === '/check-in' ? 'white' : '#b33a13' }">check_circle</mat-icon>
                   </a>
                   <a mat-button [routerLink]="'/PTO'" routerLinkActive="active_routing">
-                      <mat-icon>report_problem</mat-icon>
+                      <mat-icon [ngStyle]="{'color':router.url === '/PTO' ? 'white' : '#b33a13' }">report_problem</mat-icon>
                   </a>
                   <a mat-button [routerLink]="'/contacts'" routerLinkActive="active_routing">
-                      <mat-icon>assignment</mat-icon>
+                      <mat-icon [ngStyle]="{'color':router.url === '/contacts' ? 'white' : '#b33a13' }">dashboard</mat-icon>
                   </a>
               </div>
           </mat-toolbar-row>
