@@ -1,46 +1,43 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Type } from '@angular/compiler';
-import { stringify } from '@angular/compiler/src/util';
-import { Button } from 'protractor';
-import { PtoService } from 'src/app/Services/pto.service';
-import { Pto } from '../../Models/pto';
-import { AlertsService } from 'src/app/Services/alerts.service';
-import { NGXLogger } from 'ngx-logger'
+import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
+import { PtoService } from "src/app/Services/pto.service";
+import { Pto } from "../../Models/pto";
+import { AlertsService } from "src/app/Services/alerts.service";
+import { NGXLogger } from "ngx-logger";
+import { MatStepper } from "@angular/material";
 
 @Component({
-  selector: 'app-CreatePTO',
-  templateUrl: './CreatePTO.component.html',
-  styleUrls: ['./CreatePTO.component.css'],
+  selector: "app-CreatePTO",
+  templateUrl: "./CreatePTO.component.html",
+  styleUrls: ["./CreatePTO.component.css"],
   //this may be important to consider if alerts don't work because of the new service
   encapsulation: ViewEncapsulation.None
 })
-
 export class CreatePTOComponent implements OnInit {
-  pinValue: number;
-  selection: number;
-  model:Pto;
-  responseJson: any;
+  pin: number;
+  selectedDate: boolean;
+  pto: Pto;
+  @ViewChild(MatStepper, { static: false }) matStepper: MatStepper;
 
-
-  constructor(private ptoObject: PtoService, private alerts: AlertsService, private logObj: NGXLogger) { 
-    
-  }
+  constructor(
+    private ptoService: PtoService,
+    private alertService: AlertsService,
+    private logger: NGXLogger
+  ) {}
   ngOnInit() {
-    this.model = new Pto();
+    this.pto = new Pto();
   }
 
   Submit() {
-    this.model.pin = this.pinValue;
-    this.model.day = this.selection;
-    this.ptoObject.newPto(this.model).subscribe(response => {  
-      this.responseJson = response;
-      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
-      }, error=>{
-        this.logObj.debug(error);
-      this.alerts.alertMessage(this.responseJson.info, this.responseJson.type)
-      });
+    this.pto.pin = this.pin;
+    this.pto.day = this.selectedDate;
+    this.ptoService.Create(this.pto).subscribe(
+      response => {
+        this.alertService.alertMessage(response["info"], response["type"]);
+      },
+      error => {
+        this.logger.debug(error);
+        this.alertService.alertMessage(error["info"], error["type"]);
+      }
+    );
   }
-  
 }

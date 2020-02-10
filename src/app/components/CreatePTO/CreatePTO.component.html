@@ -1,26 +1,47 @@
-<h1 class="toCenter">Create a PTO</h1>
+<h1 id="ptoComponentTitle" class="toCenter">Create a PTO</h1>
 <div class="ptoContainer">
-    <mat-vertical-stepper>
+  <mat-vertical-stepper>
+    <mat-step id="stepOne" label="Fill out your PIN">
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          pattern="[0-9]*"
+          inputmode="numeric"
+          maxlength="4"
+          id="pinInput"
+          placeholder="PIN"
+          [(ngModel)]="pinValue"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <button id="stepOneNextButton" mat-button matStepperNext>Next</button>
+    </mat-step>
 
-        <mat-step label="Fill out your PIN">
-            <mat-form-field>
-                <input matInput type="password" pattern="[0-9]*" inputmode="numeric" maxlength="4" placeholder="PIN" [(ngModel)]="pinValue" required>
-            </mat-form-field> <br>
-            <button mat-button matStepperNext>Next</button>
-        </mat-step>
+    <mat-step id="stepTwo" label="Day of PTO">
+      <mat-radio-group
+        id="dateOptionsRadioGroup"
+        aria-label="Select an option"
+        [(ngModel)]="selection"
+      >
+        <mat-radio-button id="yesterdayOption" [value]="0"
+          >Yesterday</mat-radio-button
+        >
+        <br /><br />
+        <mat-radio-button id="todayOption" [value]="1">Today</mat-radio-button>
+      </mat-radio-group>
+      <br /><br />
+      <button id="stepTwoPreviousButton" mat-button matStepperPrevious>
+        Back
+      </button>
+      <button id="stepTwoNextButton" mat-button matStepperNext>Next</button>
+    </mat-step>
 
-        <mat-step label="Day of PTO">
-            <mat-radio-group aria-label="Select an option" [(ngModel)]="selection">
-                <mat-radio-button [value]="0">Yesterday</mat-radio-button> <br><br>
-                <mat-radio-button [value]="1">Today</mat-radio-button>
-            </mat-radio-group> <br><br>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </mat-step>
-
-        <mat-step label="Submit">
-            <button mat-button matStepperNext (click)="Submit()">Finish PTO</button>
-        </mat-step>
-
-    </mat-vertical-stepper>
+    <mat-step id="stepThree" label="Submit">
+      <button id="submit" mat-button matStepperNext (click)="Submit()">
+        Finish PTO
+      </button>
+    </mat-step>
+  </mat-vertical-stepper>
 </div>

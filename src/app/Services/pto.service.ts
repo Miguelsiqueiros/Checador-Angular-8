@@ -1,23 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { Pto } from '../Models/pto'
-import { NGXLogger } from 'ngx-logger';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { Pto } from "../Models/pto";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PtoService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient, private logger: NGXLogger) { }
-
-  newPto(ptoData: Pto) {
-    if (environment.production == true) {
-      return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
-    }
-    else {
-      return this.httpClient.post(`${environment.apiUrl}/methodName`, ptoData);
-    }
+  Create(pto: Pto) {
+    return this.httpClient.post(`${environment.apiUrl}users/pto`, pto);
   }
-
 }
