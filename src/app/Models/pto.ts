@@ -1,4 +1,4 @@
 export class Pto {
-    pin: number;
-    day: number;
+  pin: number;
+  day: boolean;
 }
