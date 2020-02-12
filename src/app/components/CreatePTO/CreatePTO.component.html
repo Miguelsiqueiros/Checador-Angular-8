@@ -1,6 +1,6 @@
 <h1 id="ptoComponentTitle" class="toCenter">Create a PTO</h1>
 <div class="ptoContainer">
-  <mat-vertical-stepper>
+  <mat-vertical-stepper [formGroup]="ptoFormGroup">
     <mat-step id="stepOne" label="Fill out your PIN">
       <mat-form-field>
         <input
@@ -11,7 +11,7 @@
           maxlength="4"
           id="pinInput"
           placeholder="PIN"
-          [(ngModel)]="pinValue"
+          formControlName="pin"
           required
         />
       </mat-form-field>
@@ -23,13 +23,15 @@
       <mat-radio-group
         id="dateOptionsRadioGroup"
         aria-label="Select an option"
-        [(ngModel)]="selection"
+        formControlName="date"
       >
-        <mat-radio-button id="yesterdayOption" [value]="0"
+        <mat-radio-button id="yesterdayOption" [value]="false"
           >Yesterday</mat-radio-button
         >
         <br /><br />
-        <mat-radio-button id="todayOption" [value]="1">Today</mat-radio-button>
+        <mat-radio-button id="todayOption" [value]="true"
+          >Today</mat-radio-button
+        >
       </mat-radio-group>
       <br /><br />
       <button id="stepTwoPreviousButton" mat-button matStepperPrevious>
