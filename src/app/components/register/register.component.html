@@ -8,6 +8,22 @@
             <button mat-button matStepperNext>Next</button>
         </mat-step>
 
+        <mat-step label="Email address">
+            <mat-form-field [formGroup]="profileForm">
+                <input matInput placeholder="Email address" formControlName="email" type="email" required>
+            </mat-form-field><br>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </mat-step>
+
+        <mat-step label="Arrival hour">
+            <mat-form-field [formGroup]="profileForm">
+                <input matInput placeholder="Arrival hour" formControlName="arrival" type="time" required>
+            </mat-form-field><br>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </mat-step>
+
         <mat-step label="Profile Photo (Optional)">
             <mat-form-field [formGroup]="profileForm">
                 <input matInput placeholder="Photo URL" formControlName="photoURL">
