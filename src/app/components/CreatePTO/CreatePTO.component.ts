@@ -4,6 +4,7 @@ import { Pto } from "../../Models/pto";
 import { AlertsService } from "src/app/Services/alerts.service";
 import { NGXLogger } from "ngx-logger";
 import { MatStepper } from "@angular/material";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-CreatePTO",
@@ -16,6 +17,7 @@ export class CreatePTOComponent implements OnInit {
   pin: number;
   selectedDate: boolean;
   pto: Pto;
+  ptoFormGroup: FormGroup;
   @ViewChild(MatStepper, { static: false }) matStepper: MatStepper;
 
   constructor(
@@ -25,19 +27,31 @@ export class CreatePTOComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.pto = new Pto();
+    this.ptoFormGroup = new FormGroup({
+      pin: new FormControl(null, [
+        Validators.min(1000),
+        Validators.max(9999),
+        Validators.required
+      ]),
+      date: new FormControl(null, [Validators.required])
+    });
   }
 
   Submit() {
-    this.pto.pin = this.pin;
-    this.pto.day = this.selectedDate;
-    this.ptoService.Create(this.pto).subscribe(
-      response => {
-        this.alertService.alertMessage(response["info"], response["type"]);
-      },
-      error => {
-        this.logger.debug(error);
-        this.alertService.alertMessage(error["info"], error["type"]);
-      }
-    );
+    if (this.ptoFormGroup.valid) {
+      this.pto.pin = this.ptoFormGroup.controls.pin.value;
+      this.pto.day = this.ptoFormGroup.controls.date.value;
+      this.ptoService.Create(this.pto).subscribe(
+        response => {
+          this.alertService.alertMessage(response["info"], response["type"]);
+        },
+        error => {
+          this.logger.debug(error);
+          this.alertService.alertMessage(error["info"], error["type"]);
+        }
+      );
+    } else {
+      this.alertService.alertMessage("Invalid value(s)", "error");
+    }
   }
 }

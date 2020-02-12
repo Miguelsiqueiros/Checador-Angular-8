@@ -8,7 +8,7 @@ import {
   MatSnackBarModule,
   MatInputModule
 } from "@angular/material";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PtoService } from "src/app/Services/pto.service";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -38,6 +38,7 @@ describe("Test PTO Component", () => {
         MatRadioModule,
         HttpClientModule,
         HttpClientTestingModule,
+        ReactiveFormsModule,
         LoggerModule.forRoot({
           serverLoggingUrl: "/api/logs",
           level: NgxLoggerLevel.DEBUG,
@@ -154,11 +155,62 @@ describe("Test PTO Component", () => {
       alertService,
       "alertMessage"
     ).and.callThrough();
+    const pin = ptoComponent.ptoFormGroup.controls.pin;
+    pin.setValue(1000);
+    const date = ptoComponent.ptoFormGroup.controls.date;
+    date.setValue(false);
     ptoComponent.Submit();
     const request = httpMock.expectOne(`${environment.apiUrl}users/pto`);
     request.flush(mockData, mockResponse);
     httpMock.verify();
     expect(submitMethod).toHaveBeenCalled();
     expect(displayAlertMethod).toHaveBeenCalled();
+  });
+  it("Step #3 should not create a PTO if the pin is empty when the user clicks the submit button", () => {
+    const date = ptoComponent.ptoFormGroup.controls.date;
+    date.setValue(false);
+    const form = ptoComponent.ptoFormGroup.valid;
+    expect(form).toBeFalsy();
+    const submitMethod = spyOn(ptoComponent, "Submit").and.callThrough();
+    ptoComponent.Submit();
+    expect(submitMethod).toHaveBeenCalled();
+    httpMock.expectNone(`${environment.apiUrl}users/pto)`);
+  });
+  it("Step #3 should not create a PTO if the pin is not a number", () => {
+    const date = ptoComponent.ptoFormGroup.controls.date;
+    date.setValue(false);
+    const pin = ptoComponent.ptoFormGroup.controls.pin;
+    const invalidPin = "asdasdas";
+    pin.setValue(invalidPin);
+    const form = ptoComponent.ptoFormGroup.valid;
+    expect(form).toBeFalsy();
+    const submitMethod = spyOn(ptoComponent, "Submit").and.callThrough();
+    ptoComponent.Submit();
+    expect(submitMethod).toHaveBeenCalled();
+    httpMock.expectNone(`${environment.apiUrl}users/pto)`);
+  });
+  it("Step #3 should not create a PTO if the pin is not between 1000 and 9999", () => {
+    const date = ptoComponent.ptoFormGroup.controls.date;
+    date.setValue(false);
+    const pin = ptoComponent.ptoFormGroup.controls.pin;
+    const invalidPin = 100;
+    pin.setValue(invalidPin);
+    const form = ptoComponent.ptoFormGroup.valid;
+    expect(form).toBeFalsy();
+    const submitMethod = spyOn(ptoComponent, "Submit").and.callThrough();
+    ptoComponent.Submit();
+    expect(submitMethod).toHaveBeenCalled();
+    httpMock.expectNone(`${environment.apiUrl}users/pto)`);
+  });
+  it("Step #3 should not create a PTO if the user does not select a day", () => {
+    const pin = ptoComponent.ptoFormGroup.controls.pin;
+    const validPin = 9999;
+    pin.setValue(validPin);
+    const form = ptoComponent.ptoFormGroup.valid;
+    expect(form).toBeFalsy();
+    const submitMethod = spyOn(ptoComponent, "Submit").and.callThrough();
+    ptoComponent.Submit();
+    expect(submitMethod).toHaveBeenCalled();
+    httpMock.expectNone(`${environment.apiUrl}users/pto)`);
   });
 });
