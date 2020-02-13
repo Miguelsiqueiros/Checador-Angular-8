@@ -5,6 +5,7 @@ import { User } from '../../Models/user';
 import { CheckInService } from 'src/app/Services/checkIn.service';
 import { AlertsService } from 'src/app/Services/alerts.service';
 import { NGXLogger } from 'ngx-logger';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,9 @@ export class RegisterComponent implements OnInit {
 
   profileForm = new FormGroup({
     fullName: new FormControl(''),
-    photoURL: new FormControl('')
+    photoURL: new FormControl(''),
+    email: new FormControl(''),
+    arrival: new FormControl('')
   });
 
   responseJson:any;
@@ -30,6 +33,8 @@ export class RegisterComponent implements OnInit {
 
   SubmitData() {
     this.model.name = this.profileForm.get("fullName").value;
+    this.model.email = this.profileForm.get("email").value;
+    this.model.arrival = Number(this.profileForm.get("arrival").value.split(":")[0]);
     this.model.image = this.profileForm.get("photoURL").value;
     this.registerObject.registerName(this.model).subscribe(response => {  
       this.responseJson = response;
