@@ -1,40 +1,64 @@
-<h1 class="toCenter">Register</h1>
+<h1 id="registerComponentTitle" class="toCenter">Register</h1>
 <div class="registerContainer">
-    <mat-vertical-stepper>
-        <mat-step label="Enter your Full name">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Full name" formControlName="fullName" required>
-            </mat-form-field> <br>
-            <button mat-button matStepperNext>Next</button>
+    <mat-vertical-stepper [formGroup]="profileForm">
+        <mat-step id="stepOne" label="Enter your Full name">
+            <mat-form-field >
+                <input
+                 matInput 
+                 placeholder="Full name" 
+                 formControlName="fullName" 
+                 required
+                 />
+            </mat-form-field> 
+            <br />
+            <button id="stepOneNextButton" mat-button matStepperNext>Next</button>
         </mat-step>
 
-        <mat-step label="Email address">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Email address" formControlName="email" type="email" required>
-            </mat-form-field><br>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+        <mat-step id="stepTwo" label="Email address">
+            <mat-form-field>
+                <input 
+                 matInput 
+                 placeholder="Email address" 
+                 formControlName="email" 
+                 type="email" 
+                 required
+                 />
+            </mat-form-field>
+            <br />
+            <button id="stepTwoPreviousButton" mat-button matStepperPrevious>Back</button>
+            <button id="stepTwoNextButton" mat-button matStepperNext>Next</button>
         </mat-step>
 
-        <mat-step label="Arrival hour">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Arrival hour" formControlName="arrival" type="time" required>
-            </mat-form-field><br>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+        <mat-step id="stepThree" label="Arrival hour">
+            <mat-form-field>
+                <input 
+                 matInput 
+                 placeholder="Arrival hour" 
+                 formControlName="arrival" 
+                 type="time" 
+                 required 
+                 />
+            </mat-form-field>
+            <br />
+            <button id="stepThreePreviousButton" mat-button matStepperPrevious>Back</button>
+            <button id="stepThreeNextButton" mat-button matStepperNext>Next</button>
         </mat-step>
 
-        <mat-step label="Profile Photo (Optional)">
-            <mat-form-field [formGroup]="profileForm">
-                <input matInput placeholder="Photo URL" formControlName="photoURL">
-            </mat-form-field><br>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+        <mat-step id="stepFour" label="Profile Photo (Optional)">
+            <mat-form-field>
+                <input 
+                 matInput 
+                 placeholder="Photo URL" 
+                 formControlName="photoURL"
+                 />
+            </mat-form-field>
+            <br />
+            <button id="stepFourPreviousButton" mat-button matStepperPrevious>Back</button>
+            <button id="stepFourNextButton" mat-button matStepperNext>Next</button>
         </mat-step>
 
-        <mat-step label="Generate PIN">
-            <button mat-button matStepperNext [formGroup]="profileForm" (click)="SubmitData()">Finish</button>
+        <mat-step id="stepFive" label="Generate PIN">
+            <button id="submit" mat-button matStepperNext (click)="SubmitData()">Finish</button>
         </mat-step>
     </mat-vertical-stepper>
-
 </div>
