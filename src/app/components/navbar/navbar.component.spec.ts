@@ -7,7 +7,6 @@ import { RankingComponent } from "../ranking/ranking.component";
 import {
   TestBed,
   ComponentFixture,
-  getTestBed,
   fakeAsync,
   tick
 } from "@angular/core/testing";
@@ -32,9 +31,9 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
-import { By } from "protractor";
+import { By } from "@angular/platform-browser";
 
-fdescribe("Test NavBar component", () => {
+describe("Test NavBar component", () => {
   let fixture: ComponentFixture<NavbarComponent>;
   let navBarComponent: NavbarComponent;
   let navBarHtml: HTMLElement;
@@ -101,32 +100,35 @@ fdescribe("Test NavBar component", () => {
     expect(numberOfMenuItems).toBe(4);
   });
   it("Button #1 should display a menu icon", () => {
-    const menuButton1: string = navBarHtml
-      .querySelectorAll(".mat-button")[0]
-      .querySelector(".mat-button-wrapper")
+    const menuButton = navBarHtml
+      .querySelector("#menu")
       .querySelector(".mat-icon").innerHTML;
-    expect(menuButton1).toBe("menu");
+    expect(menuButton).toBe("menu");
   });
   it("Button #2 should display a check-in icon", () => {
-    const menuButton2: string = navBarHtml
-      .querySelectorAll(".mat-button")[1]
-      .querySelector(".mat-button-wrapper")
+    const checkinButton = navBarHtml
+      .querySelector("#checkin")
       .querySelector(".mat-icon").innerHTML;
-    expect(menuButton2).toBe("check_circle");
+    expect(checkinButton).toBe("check_circle");
   });
   it("Button #3 should display a report-problem icon", () => {
-    const menuButton3: string = navBarHtml
-      .querySelectorAll(".mat-button")[2]
-      .querySelector(".mat-button-wrapper")
+    const ptoButton = navBarHtml
+      .querySelector("#pto")
       .querySelector(".mat-icon").innerHTML;
-    expect(menuButton3).toBe("report_problem");
+    expect(ptoButton).toBe("report_problem");
   });
   it("Button #4 should display a dashboard icon", () => {
-    const menuButton4: string = navBarHtml
-      .querySelectorAll(".mat-button")[3]
-      .querySelector(".mat-button-wrapper")
+    const dashboardButton = navBarHtml
+      .querySelector("#dashboard")
       .querySelector(".mat-icon").innerHTML;
-    expect(menuButton4).toBe("dashboard");
+    expect(dashboardButton).toBe("dashboard");
+  });
+  it("Should display sidebar when menu button is clicked", () => {
+    const menuButton = fixture.debugElement.query(By.css("a"));
+    const sideBar = navBarHtml.querySelector("#sideBar");
+    menuButton.triggerEventHandler("click", {});
+    fixture.detectChanges();
+    expect(sideBar.classList.contains("mat-drawer-opened")).toBe(true);
   });
   it('Navigate to "check-in" takes you to /check-in', fakeAsync(() => {
     fixture.ngZone.run(() => {
