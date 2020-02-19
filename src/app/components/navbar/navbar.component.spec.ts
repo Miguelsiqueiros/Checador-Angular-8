@@ -32,6 +32,7 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
+import { By } from "protractor";
 
 fdescribe("Test NavBar component", () => {
   let fixture: ComponentFixture<NavbarComponent>;
@@ -87,7 +88,9 @@ fdescribe("Test NavBar component", () => {
     fixture.detectChanges();
     router = TestBed.get(Router);
     location = TestBed.get(Location);
-    router.initialNavigation();
+    fixture.ngZone.run(() => {
+      router.initialNavigation();
+    });
   });
   it("Should display Navbar component", () => {
     expect(navBarComponent).toBeTruthy();
@@ -125,19 +128,25 @@ fdescribe("Test NavBar component", () => {
       .querySelector(".mat-icon").innerHTML;
     expect(menuButton4).toBe("dashboard");
   });
-  it('Navigate to "PTO" takes you to /PTO', fakeAsync(() => {
-    router.navigate(["PTO"]);
-    tick();
-    expect(location.path()).toBe("/PTO");
+  it('Navigate to "check-in" takes you to /check-in', fakeAsync(() => {
+    fixture.ngZone.run(() => {
+      router.navigate(["check-in"]);
+      tick();
+      expect(location.path()).toBe("/check-in");
+    });
   }));
   it('Navigate to "register" takes you to /register', fakeAsync(() => {
-    router.navigate(["register"]);
-    tick();
-    expect(location.path()).toBe("/register");
+    fixture.ngZone.run(() => {
+      router.navigate(["register"]);
+      tick();
+      expect(location.path()).toBe("/register");
+    });
   }));
-  it('Navigate to "check-in" takes you to /check-in', fakeAsync(() => {
-    router.navigate(["check-in"]);
-    tick();
-    expect(location.path()).toBe("/check-in");
+  it('Navigate to "PTO" takes you to /PTO', fakeAsync(() => {
+    fixture.ngZone.run(() => {
+      router.navigate(["PTO"]);
+      tick();
+      expect(location.path()).toBe("/PTO");
+    });
   }));
 });
