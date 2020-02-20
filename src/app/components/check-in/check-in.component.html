@@ -1,12 +1,32 @@
 <div class="checkInDisplay">
-    <h1 class="dayTimer">{{time | date: 'hh:mm:ss a'}}</h1>
+    <h1 id="checkInComponentTitle" class="dayTimer">
+        {{time | date: 'hh:mm:ss a'}}
+    </h1>
 
     <mat-form-field class="example-form-field">
-        <input matInput class="pin-number-input" type="tel" inputmode="numeric" mask="0000" placeholder="Insert your PIN" [(ngModel)]="pinValue">
+        <input 
+         matInput 
+         class="pin-number-input" 
+         type="tel" 
+         inputmode="numeric" 
+         mask="0000" 
+         placeholder="Insert your PIN" 
+         [(ngModel)]="pinValue"
+         />
 
-        <button color="accent" type="submit" mat-raised-button *ngIf="pinValue>999" matSuffix mat-icon-button aria-label="Clear" (click)="SubmitData()">
+        <button 
+         id="submit"
+         color="accent" 
+         type="submit" 
+         mat-raised-button 
+         *ngIf="pinValue>999" 
+         matSuffix 
+         mat-icon-button 
+         aria-label="Clear" 
+         (click)="SubmitData()"
+         >
       <mat-icon>arrow_forward</mat-icon>
-    </button>
+      </button>
     </mat-form-field>
 </div>
 
