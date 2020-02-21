@@ -11,11 +11,11 @@ export class ProfileService {
   constructor(private httpClient: HttpClient) { }
 
   getProfile(pin: number) {
-    return this.httpClient.post(`${environment.apiUrl}users/methodname`, { pin: pin });
+    return this.httpClient.post(`${environment.apiUrl}users/user-profile`, { pin: pin });
   }
 
   saveProfileChanges(profileChanges: Profile){
-    return this.httpClient.post(`${environment.apiUrl}users/methodname`, profileChanges);
+    return this.httpClient.post(`${environment.apiUrl}users/update-data`, profileChanges);
   }
 
 }

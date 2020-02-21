@@ -1,5 +1,5 @@
 export class Profile {
-    pin: string;
+    pin: number;
     name: string;
     email: string;
     image: string;
