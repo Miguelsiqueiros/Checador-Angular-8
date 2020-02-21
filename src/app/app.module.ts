@@ -34,7 +34,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
 
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
-
+import { LoginProfileComponent } from './components/login-profile/login-profile.component';
+import { Profile } from 'selenium-webdriver/firefox';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,8 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
     RegisterComponent,
     RankingComponent,
     FooterComponent,
-    CheckInComponent
-    ],
+    CheckInComponent,
+    LoginProfileComponent    ],
   imports: [
     MatTableModule,
     BrowserAnimationsModule,
@@ -76,6 +77,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
   providers: [
     RankingComponent,
     CheckInComponent,
+    LoginProfileComponent
   ],
   bootstrap: [AppComponent],
   exports:[

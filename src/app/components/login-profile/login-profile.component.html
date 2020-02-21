@@ -1,0 +1,38 @@
+<h1 id="title" class="toCenter">Profile</h1>
+
+<div class="logInDisplay" id="LoginInput">
+
+  <mat-form-field>
+    <input matInput class="pin-number-input" type="tel" inputmode="numeric" mask="0000"
+      placeholder="Insert your PIN to access" [(ngModel)]="model.pin">
+
+    <button color="accent" type="submit" mat-raised-button *ngIf="model.pin>999" matSuffix mat-icon-button
+      aria-label="Clear" (click)="login()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </mat-form-field>
+
+</div>
+
+<div id="ProfileDisplay">
+  <h2 id="Name" class="toCenter">{{model.name}}<mat-icon [ngStyle]="{color: darkgray}">create</mat-icon>
+  </h2>
+  <div class="circular--landscape">
+    <img src="{{model.image}}" alt="Picture of this dude">
+  </div>
+  <mat-card class="data-card">
+    <p id="Email">
+      <mat-icon class="card-icon">email</mat-icon><b>{{model.email}}</b>
+    </p>
+    <p id="LastWeekAverage">
+      <mat-icon class="card-icon">av_timer</mat-icon>Last week's avg delay of <b>{{model.lastWeekAverage}} mins</b>
+    </p>
+    <p id="CurrentWeekAverage">
+      <mat-icon class="card-icon">av_timer</mat-icon>Current week's avg delay of <b>{{model.currentWeekAverage}}
+        mins</b>
+    </p>
+    <p id="arrival">
+      <mat-icon class="card-icon">watch_later</mat-icon>Arrives at <b>{{model.arrival}} AM</b>
+    </p>
+  </mat-card>
+</div>
