@@ -24,6 +24,5 @@ export class LoginProfileComponent implements OnInit {
   }
 
   login() {
-    console.log(this.model.pin);
   }
 }
