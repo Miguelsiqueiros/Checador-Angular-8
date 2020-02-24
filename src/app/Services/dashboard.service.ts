@@ -63,14 +63,11 @@ export class DashboardService {
           this.bestsUpdated.next([...this.bests]);
         });
     }
-  
-  
     getBestsUpdateListener() {
       return this.bestsUpdated.asObservable();
     }
 
     getAverage(week: Number) {
-  
       this.httpClient
           .get<{ best: any; losers: any; average: Number}>(`${environment.apiUrl}dashboard/lazyandbest/${week}`)
           .pipe(

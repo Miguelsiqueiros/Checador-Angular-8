@@ -3,8 +3,6 @@ import { DashboardService } from '../../Services/dashboard.service';
 import { lazyAndBestUser } from '../../Models/lazyAndBest';
 import * as moment from 'moment';
 import { Observable, Subscription } from 'rxjs';
-// import moment = require('moment');
-
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +22,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.weekNumber = this.getNumberOfWeek(new Date());
-    console.log(this.weekNumber);
     this.dashboardService.getLosers(this.weekNumber);
     this.losersSub = this.dashboardService.getLosersUpdateListener()
     .subscribe((losers: lazyAndBestUser[]) => {
