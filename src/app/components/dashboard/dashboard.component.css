@@ -1,0 +1,33 @@
+.red-card {
+    border: 2px solid #FF8351;
+    width: 80%;
+    height: 10rem;
+    border-radius: 30px;
+}
+
+.green-card {
+    border: 2px solid #AEDD94;
+    width: 80%;
+    height: 10rem;
+    border-radius: 30px;
+}
+
+.blue-card {
+    border: 2px solid #91E4FB;
+    width: 80%;
+    height: 10rem;
+    border-radius: 30px;
+}
+
+.cards-list {
+    position: absolute;
+    top: 10%;
+}
+
+.text-card{
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    font-size: large;
+    font-family: Helvetica;
+}

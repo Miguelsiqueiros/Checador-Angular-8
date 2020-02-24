@@ -4,6 +4,7 @@ import { CheckInComponent } from './components/check-in/check-in.component';
 import { CreatePTOComponent } from './components/CreatePTO/CreatePTO.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginProfileComponent } from './components/login-profile/login-profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'profile', component: LoginProfileComponent },
   { path: 'PTO', component: CreatePTOComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'check-in'}
 ];
 
