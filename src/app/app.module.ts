@@ -15,6 +15,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckInComponent } from './components/check-in/check-in.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CardComponent } from './components/card/card.component';
 
 // Angular material modules
 import { MatSliderModule } from '@angular/material/slider';
@@ -32,10 +34,10 @@ import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule, MatSidenavModule} from '@angular/material';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
-
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { LoginProfileComponent } from './components/login-profile/login-profile.component';
 import { Profile } from 'selenium-webdriver/firefox';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,10 @@ import { Profile } from 'selenium-webdriver/firefox';
     RankingComponent,
     FooterComponent,
     CheckInComponent,
-    LoginProfileComponent    ],
+    LoginProfileComponent,
+    DashboardComponent,
+    CardComponent
+    ],
   imports: [
     MatTableModule,
     BrowserAnimationsModule,

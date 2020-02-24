@@ -1,0 +1,25 @@
+<div class="grid-container">
+    <mat-grid-list cols="3"  rowHeight="350px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <app-card [title]="titles[0]" [arrayData]="losers" class="red-card cards-list" > 
+                <p class="text-card" *ngFor="let user of losers">
+                    {{ user.name }}
+                </p>
+            </app-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <app-card [title]="titles[1]"  class="green-card cards-list">
+                <p class="text-card" *ngFor="let user of bests">
+                    {{ user.name }}
+                </p>
+            </app-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <app-card [title]="titles[2]" class="blue-card cards-list">
+                <p class="text-card">
+                    {{ average }}
+                </p>
+            </app-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
