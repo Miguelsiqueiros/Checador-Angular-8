@@ -24,5 +24,6 @@ export class LoginProfileComponent implements OnInit {
   }
 
   login() {
+    
   }
 }
