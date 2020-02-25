@@ -38,7 +38,6 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { LoginProfileComponent } from './components/login-profile/login-profile.component';
 import { Profile } from 'selenium-webdriver/firefox';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/Services/profile.service';
 import { AlertsService } from 'src/app/Services/alerts.service';
 import { Profile } from 'src/app/Models/profile';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-login-profile',
@@ -12,6 +13,8 @@ export class LoginProfileComponent implements OnInit {
 
   constructor(private profileObject: ProfileService, private alertsObject: AlertsService) { }
   model: Profile;
+  response: any;
+  pinValue: any;
 
   ngOnInit() {
     this.model = new Profile();
@@ -24,6 +27,18 @@ export class LoginProfileComponent implements OnInit {
   }
 
   login() {
-    
+    this.response = JSON.stringify(this.profileObject.getProfile(this.pinValue));
+    // this.model.pin = this.pinValue;
+    // this.model.name = this.response.name;
+    // this.model.image = this.response.image;
+    // this.model.email = this.response.email;
+    // this.model.lastWeekAverage = this.response.lastWeekAverage;
+    // this.model.currentWeekAverage = this.response.currentWeekAverage;
+    // this.model.arrival = this.response.arrival;
+
+    document.getElementById("LoginInput").style.display = "none";
+    document.getElementById("ProfileDisplay").hidden = false;
+    console.log(this.response);
+    console.log(this.model);
   }
 }
