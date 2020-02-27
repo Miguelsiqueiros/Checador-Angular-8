@@ -1,12 +1,10 @@
-<h1 id="title" class="toCenter">Profile</h1>
-
 <div class="logInDisplay" id="LoginInput">
-
+  <h1 id="title" class="toCenter">Profile</h1>
   <mat-form-field>
     <input matInput class="pin-number-input" type="tel" inputmode="numeric" mask="0000"
-      placeholder="Insert your PIN to access" [(ngModel)]="model.pin">
+      placeholder="Insert your PIN to access" [(ngModel)]="pinValue">
 
-    <button color="accent" type="submit" mat-raised-button *ngIf="model.pin>999" matSuffix mat-icon-button
+    <button color="accent" type="submit" mat-raised-button *ngIf="pinValue>999" matSuffix mat-icon-button
       aria-label="Clear" (click)="login()">
       <mat-icon>arrow_forward</mat-icon>
     </button>
@@ -14,7 +12,7 @@
 
 </div>
 
-<div id="ProfileDisplay">
+<div id="ProfileDisplay" hidden="true">
   <h2 id="Name" class="toCenter">{{model.name}}<mat-icon>create</mat-icon>
   </h2>
   <div class="circular--landscape">
