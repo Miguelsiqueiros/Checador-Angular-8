@@ -1,16 +1,16 @@
-<table class="tableHeader">
+<table class="tableHeader" id="titleTable">
     <tr>
         <th class="title">
             <h2 id="title" class="toRight">{{title}}</h2>
         </th>
         <th class="slider">
-            <mat-slide-toggle (click)="toggleRanking()"></mat-slide-toggle>
+            <mat-slide-toggle id="slider" (click)="toggleRanking()"></mat-slide-toggle>
         </th>
     </tr>
 </table>
 
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 rankingTable mediumSize">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 rankingTable mediumSize" id="infoTable">
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">
