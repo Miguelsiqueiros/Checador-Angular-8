@@ -11,7 +11,7 @@ export class ProfileService {
   constructor(private httpClient: HttpClient) { }
 
   getProfile(pin: number) {
-    return this.httpClient.post(`${environment.apiUrl}users/user-profile`, { pin: pin });
+    return this.httpClient.get(`${environment.apiUrl}users/user-profile/${pin}`);
   }
 
   saveProfileChanges(profileChanges: Profile){
