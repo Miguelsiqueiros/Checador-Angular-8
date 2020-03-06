@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Profile } from 'selenium-webdriver/firefox';
+import { Profile } from 'src/app/Models/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class ProfileService {
   }
 
   saveProfileChanges(profileChanges: Profile){
-    return this.httpClient.post(`${environment.apiUrl}users/update-data`, profileChanges);
+    return this.httpClient.put(`${environment.apiUrl}users/update`, profileChanges);
   }
 
 }

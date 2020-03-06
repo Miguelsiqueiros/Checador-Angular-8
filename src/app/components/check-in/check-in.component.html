@@ -4,30 +4,33 @@
     </h1>
 
     <mat-form-field class="example-form-field">
-        <input 
-         matInput 
-         class="pin-number-input" 
-         type="tel" 
-         inputmode="numeric" 
-         mask="0000" 
-         placeholder="Insert your PIN" 
+        <input
+         matInput
+         class="pin-number-input"
+         type="tel"
+         inputmode="numeric"
+         mask="0000"
+         placeholder="Insert your PIN"
          [(ngModel)]="pinValue"
+         (keydown.enter)="SubmitData()"
          />
 
-        <button 
+        <button
          id="submit"
-         color="accent" 
-         type="submit" 
-         mat-raised-button 
-         *ngIf="pinValue>999" 
-         matSuffix 
-         mat-icon-button 
-         aria-label="Clear" 
+         color="accent"
+         type="submit"
+         mat-raised-button
+         *ngIf="pinValue>999"
+         matSuffix
+         mat-icon-button
+         aria-label="Clear"
          (click)="SubmitData()"
          >
       <mat-icon>arrow_forward</mat-icon>
       </button>
     </mat-form-field>
+
+
 </div>
 
 <app-ranking></app-ranking>

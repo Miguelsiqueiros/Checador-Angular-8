@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -52,6 +53,7 @@ import { Profile } from 'selenium-webdriver/firefox';
     CardComponent
     ],
   imports: [
+    MatDialogModule,
     MatTableModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -76,7 +78,7 @@ import { Profile } from 'selenium-webdriver/firefox';
     MatListModule,
     LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR}),
     MatSnackBarModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     RankingComponent,
