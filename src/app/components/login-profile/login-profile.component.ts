@@ -40,7 +40,6 @@ export class LoginProfileComponent implements OnInit {
     const dialogRef = this.dialog.open(templateRef, {
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 
