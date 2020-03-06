@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CheckInService } from 'src/app/Services/checkIn.service';
 import { CdkTable } from '@angular/cdk/table';
+
 import { RankingComponent } from '../ranking/ranking.component';
 import { AlertsService } from 'src/app/Services/alerts.service';
 import { NGXLogger } from 'ngx-logger';
@@ -15,11 +16,21 @@ export class CheckInComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar, private checkInObject: CheckInService, private RanTable: RankingComponent, private alerts:AlertsService, private logger:NGXLogger) { }
   pinValue: number;
   time = new Date();
+  value: any;
   responseJson: any;
   ngOnInit() {
     setInterval(() => {
       this.time = new Date();
     }, 1000);
+  }
+
+
+  isEnter(e){
+    if(e.keyCode === 13){
+      e.preventDefault();
+      this.SubmitData();
+      alert("Enter was pressed");
+    }
   }
 
   SubmitData() {
