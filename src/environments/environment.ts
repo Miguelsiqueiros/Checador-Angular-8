@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiUrl: 'https://tempranon.herokuapp.com/api/v1/'
+  production: false,
+  apiUrl: 'https://tempranon-stage.herokuapp.com/api/v1/'
 };
 
 /*
